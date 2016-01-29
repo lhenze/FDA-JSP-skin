@@ -171,7 +171,7 @@
   });
   </script>
 </header>
-
+<main id="content" role="main">
 <%
     if (locbar)
     {
@@ -183,7 +183,7 @@
     }
 %>
 
-<main id="content" role="main">
+
 
 
         <%-- Page contents --%>
