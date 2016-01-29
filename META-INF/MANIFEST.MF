@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Implementation-Title: DSpace JSP-UI :: Local Customizations
+Implementation-Version: 5.4
+Archiver-Version: Plexus Archiver
+Built-By: lhenze
+Specification-Vendor: DuraSpace
+Specification-Title: DSpace JSP-UI :: Local Customizations
+Implementation-Vendor-Id: org.dspace.modules
+Created-By: Apache Maven 3.0.5
+Build-Jdk: 1.8.0_71
+Specification-Version: 5.4
+Implementation-Vendor: DuraSpace
+
