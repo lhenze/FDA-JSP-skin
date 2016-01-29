@@ -127,7 +127,7 @@
 <div class="row">
 	<div class="col-md-8">
         <div class="page-title-area">
-        <h2><%= name %> <small>Community home page</small></h2>
+        <h2><%= name %></h2>
          </div>
 <%  if (logo != null) { %>
      <div class="col-md-4">
