@@ -160,7 +160,6 @@
     <%-- <h1>Search Results</h1> --%>
 
 <h2><fmt:message key="jsp.search.title"/></h2>
-
 <div class="discovery-search-form panel panel-default">
     <%-- Controls for a repeat search --%>
 	<div class="discovery-query panel-heading">
@@ -459,21 +458,21 @@ else if( qResults != null)
     lastURL = lastURL + (pageTotal-1) * qResults.getMaxResults();
 
 
-%>
-<hr/>
-<div class="discovery-result-pagination row container">
+%><div>
 <%
 	long lastHint = qResults.getStart()+qResults.getMaxResults() <= qResults.getTotalSearchResults()?
 	        qResults.getStart()+qResults.getMaxResults():qResults.getTotalSearchResults();
 %>
     <%-- <p align="center">Results <//%=qResults.getStart()+1%>-<//%=qResults.getStart()+qResults.getHitHandles().size()%> of --%>
-	<div class="alert alert-info"><fmt:message key="jsp.search.results.results">
+	<div>WHY IS THIS AN ALERT <fmt:message key="jsp.search.results.results">
         <fmt:param><%=qResults.getStart()+1%></fmt:param>
         <fmt:param><%=lastHint%></fmt:param>
         <fmt:param><%=qResults.getTotalSearchResults()%></fmt:param>
         <fmt:param><%=(float) qResults.getSearchTime() / 1000%></fmt:param>
     </fmt:message></div>
-    <ul class="pagination pull-right">
+
+
+ <ul class="pagination pull-right">
 	<%
 	if (pageFirst != pageCurrent)
 	{
@@ -528,32 +527,36 @@ else if( qResults != null)
 	}
 	%>
 	</ul>
+
+
 <!-- give a content to the div -->
 </div>
+
+ 
 <div class="discovery-result-results">
 <% if (communities.length > 0 ) { %>
-    <div class="panel panel-info">
-    <div class="panel-heading"><fmt:message key="jsp.search.results.comhits"/></div>
+   
+    <h3><fmt:message key="jsp.search.results.comhits"/></h3>
     <dspace:communitylist  communities="<%= communities %>" />
-    </div>
+  
 <% } %>
 
 <% if (collections.length > 0 ) { %>
-    <div class="panel panel-info">
-    <div class="panel-heading"><fmt:message key="jsp.search.results.colhits"/></div>
+   
+    <h3><fmt:message key="jsp.search.results.colhits"/></h3>
     <dspace:collectionlist collections="<%= collections %>" />
-    </div>
+   
 <% } %>
 
 <% if (items.length > 0) { %>
-    <div class="panel panel-info">
-    <div class="panel-heading"><fmt:message key="jsp.search.results.itemhits"/></div>
+   
+    <h3><fmt:message key="jsp.search.results.itemhits"/></h3>
     <dspace:itemlist items="<%= items %>" authorLimit="<%= etAl %>" />
-    </div>
+  
 <% } %>
 </div>
-<%-- if the result page is enought long... --%>
-<% if ((communities.length + collections.length + items.length) > 10) {%>
+   
+
 <%-- show again the navigation info/links --%>
 <div class="discovery-result-pagination row container">
     <%-- <p align="center">Results <//%=qResults.getStart()+1%>-<//%=qResults.getStart()+qResults.getHitHandles().size()%> of --%>
@@ -620,7 +623,7 @@ else
 </ul>
 <!-- give a content to the div -->
 </div>
-<% } %>
+
 <% } %>
 <dspace:sidebar>
 <%
