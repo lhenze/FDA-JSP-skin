@@ -121,7 +121,7 @@
 
     <%-- HACK: leftmargin, topmargin: for non-CSS compliant Microsoft IE browser --%>
     <%-- HACK: marginwidth, marginheight: for non-CSS compliant Netscape browser --%>
-    <body class="undernavigation">
+    <body>
 <a class="sr-only" href="#content">Skip navigation</a>
 <header class="navbar navbar-inverse navbar-fixed-top">    
     <%
