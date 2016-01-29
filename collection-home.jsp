@@ -104,9 +104,9 @@
 
 <%@page import="org.dspace.app.webui.servlet.MyDSpaceServlet"%>
 <dspace:layout locbar="commLink" title="<%= name %>" feedData="<%= feedData %>">
-    <div class="container">
+
     <div class="row"><div class="col-md-8"><h2><%= name %>
-		<small><fmt:message key="jsp.collection-home.heading1"/></small>
+	
       </h2></div>
 <%  if (logo != null) { %>
         <div class="col-md-4">
@@ -118,8 +118,8 @@
 	if (StringUtils.isNotBlank(intro)) { %>
 	<%= intro %>
 <% 	} %>
-  </div>
-  <p class="copyrightText"><%= copyright %></p>
+
+  <p class="copyrightText"> <%= copyright %></p>
   
   <%-- Browse --%>
 <%  if (submit_button)
@@ -135,10 +135,10 @@
                 <small><fmt:message key="jsp.collection-home.subscribed"/> <a href="<%= request.getContextPath() %>/subscribe"><fmt:message key="jsp.collection-home.info"/></a></small>
            		<input class="btn btn-sm btn-warning" type="submit" name="submit_unsubscribe" value="<fmt:message key="jsp.collection-home.unsub"/>" />
 <%  } else { %>
-                <small>
+             
             		  <!--<fmt:message key="jsp.collection-home.subscribe.msg"/>-->
-            		  Privet !
-                </small>
+            	
+             
 				<input class="btn btn-sm btn-info" type="submit" name="submit_subscribe" value="<fmt:message key="jsp.collection-home.subscribe"/>" />
 <%  }
 %>
