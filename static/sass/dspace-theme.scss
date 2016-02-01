@@ -28,43 +28,18 @@ $cyan: #0077a2;
 @import "partials/_buttons";
 @import "partials/_admin";
 
-// body.undernavigation {
-//   overflow-x: hidden;
-//   padding-top: 65px;
-// }
+html {
+  font-size: 100%;
+}
 
 #content {
   padding-bottom: 60px;
   margin-top: 20px;
 }
 
-html {
-  font-size: 100%;
-}
-
 a:link,
 a:visited {
   color: $cyan;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #A49483;
-  background-image: -webkit-gradient(linear, left 0, left 100%, from(#A49483), to(#8A7D6E));
-  background-image: -webkit-linear-gradient(top, #A49483, 0%, #8A7D6E, 100%);
-  background-image: -moz-linear-gradient(top, #A49483 0, #8A7D6E 100%);
-  background-image: linear-gradient(to bottom, #A49483 0, #8A7D6E 100%);
-  background-repeat: repeat-x;
-  border-color: #8A7D6E;
-}
-
-.btn-primary:hover {
-  background-image: -webkit-gradient(linear, left 0, left 100%, from(#8A7D6E), to(#A49483));
-  background-image: -webkit-linear-gradient(top, #8A7D6E, 0%, #A49483, 100%);
-  background-image: -moz-linear-gradient(top, #8A7D6E 0, #A49483 100%);
-  background-image: linear-gradient(to bottom, #8A7D6E 0, #A49483 100%);
-  background-repeat: repeat-x;
-  border-color: #8A7D6E;
 }
 
 .brand {
@@ -75,13 +50,8 @@ a:visited {
   }
 }
 
-.listofcommunities h3 a {
-  color: #333;
-  background-color: yellow;
-}
-
-.col-md-9 {
-  padding-right: 70px;
+.col-md-9 > * {
+  max-width: 50rem;
 }
 
 .collections-list {

@@ -305,13 +305,18 @@ link red #D11255   */
   background-color: #ccc7c2;
 }
 
-/* line 138, ../../sass/partials/_search.scss */
+/* line 137, ../../sass/partials/_search.scss */
+#startnewsearch-link {
+  display: block;
+}
+
+/* line 142, ../../sass/partials/_search.scss */
 .discovery-pagination-controls .form-group-flex {
   /*background-color: pink;*/
   margin-bottom: 15px;
   display: none;
 }
-/* line 143, ../../sass/partials/_search.scss */
+/* line 147, ../../sass/partials/_search.scss */
 .discovery-pagination-controls .form-flex-item {
   /*  background-color: red;*/
   -webkit-flex: 1 1 auto;
@@ -325,14 +330,14 @@ link red #D11255   */
   align-items: center;
 }
 
-/* line 157, ../../sass/partials/_search.scss */
+/* line 161, ../../sass/partials/_search.scss */
 .remove-filter .btn {
   padding: 2px 0 0 0;
   height: 25px;
   width: 25px;
 }
 
-/* line 163, ../../sass/partials/_search.scss */
+/* line 167, ../../sass/partials/_search.scss */
 .small-button .btn {
   padding: 2px 5px 0 5px;
   height: 25px;
@@ -714,34 +719,7 @@ footer.navbar a:hover {
   border-color: #adadad;
 }
 
-/* line 1, ../../sass/partials/_admin.scss */
-.help-block {
-  margin-top: 15px;
-}
-
-/* line 5, ../../sass/partials/_admin.scss */
-form.edit_metadata {
-  max-width: 900px;
-}
-
-/* line 36, ../../sass/dspace-theme.scss */
-#content {
-  padding-bottom: 60px;
-  margin-top: 20px;
-}
-
-/* line 41, ../../sass/dspace-theme.scss */
-html {
-  font-size: 100%;
-}
-
-/* line 45, ../../sass/dspace-theme.scss */
-a:link,
-a:visited {
-  color: #0077a2;
-}
-
-/* line 50, ../../sass/dspace-theme.scss */
+/* line 12, ../../sass/partials/_buttons.scss */
 .btn-primary {
   color: #fff;
   background-color: #A49483;
@@ -753,7 +731,7 @@ a:visited {
   border-color: #8A7D6E;
 }
 
-/* line 61, ../../sass/dspace-theme.scss */
+/* line 23, ../../sass/partials/_buttons.scss */
 .btn-primary:hover {
   background-image: -webkit-gradient(linear, left 0, left 100%, from(#8A7D6E), to(#A49483));
   background-image: -webkit-linear-gradient(top, #8A7D6E, 0%, #A49483, 100%);
@@ -763,28 +741,49 @@ a:visited {
   border-color: #8A7D6E;
 }
 
-/* line 70, ../../sass/dspace-theme.scss */
+/* line 1, ../../sass/partials/_admin.scss */
+.help-block {
+  margin-top: 15px;
+}
+
+/* line 5, ../../sass/partials/_admin.scss */
+form.edit_metadata {
+  max-width: 900px;
+}
+
+/* line 31, ../../sass/dspace-theme.scss */
+html {
+  font-size: 100%;
+}
+
+/* line 35, ../../sass/dspace-theme.scss */
+#content {
+  padding-bottom: 60px;
+  margin-top: 20px;
+}
+
+/* line 40, ../../sass/dspace-theme.scss */
+a:link,
+a:visited {
+  color: #0077a2;
+}
+
+/* line 45, ../../sass/dspace-theme.scss */
 .brand {
   font-size: 1rem;
   max-width: 44em;
 }
-/* line 73, ../../sass/dspace-theme.scss */
+/* line 48, ../../sass/dspace-theme.scss */
 .brand h4 {
   color: #A49483;
 }
 
-/* line 78, ../../sass/dspace-theme.scss */
-.listofcommunities h3 a {
-  color: #333;
-  background-color: yellow;
+/* line 53, ../../sass/dspace-theme.scss */
+.col-md-9 > * {
+  max-width: 50rem;
 }
 
-/* line 83, ../../sass/dspace-theme.scss */
-.col-md-9 {
-  padding-right: 70px;
-}
-
-/* line 88, ../../sass/dspace-theme.scss */
+/* line 58, ../../sass/dspace-theme.scss */
 .collections-list h3 {
   color: #4f453a;
   margin: 10px 0;
