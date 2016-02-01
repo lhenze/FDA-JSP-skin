@@ -120,27 +120,7 @@
   <p class="copyrightText"> <%= copyright %></p>
   
   <%-- Browse --%>
-<%  if (submit_button)
-    { %>
-          <form class="form-group" action="<%= request.getContextPath() %>/submit" method="post">
-            <input type="hidden" name="collection" value="<%= collection.getID() %>" />
-			<input class="btn btn-success col-md-12" type="submit" name="submit" value="<fmt:message key="jsp.collection-home.submit.button"/>" />
-          </form>
-<%  } %>
-        <form class="well" method="get" action="">
-<%  if (loggedIn && subscribed)
-    { %>
-                <small><fmt:message key="jsp.collection-home.subscribed"/> <a href="<%= request.getContextPath() %>/subscribe"><fmt:message key="jsp.collection-home.info"/></a></small>
-           		<input class="btn btn-sm btn-warning" type="submit" name="submit_unsubscribe" value="<fmt:message key="jsp.collection-home.unsub"/>" />
-<%  } else { %>
-             
-            		  <!--<fmt:message key="jsp.collection-home.subscribe.msg"/>-->
-            	
-             
-				<input class="btn btn-sm btn-info" type="submit" name="submit_subscribe" value="<fmt:message key="jsp.collection-home.subscribe"/>" />
-<%  }
-%>
-        </form>
+
 
 <div class="row">
 	<%@ include file="discovery/static-tagcloud-facet.jsp" %>
@@ -257,6 +237,8 @@
 %>
 
   <dspace:sidebar>
+
+
 <% if(admin_button || editor_button ) { %>
                  <div class="panel panel-warning">
                  <div class="panel-heading"><fmt:message key="jsp.admintools"/>
@@ -336,6 +318,36 @@
     	int discovery_facet_cols = 12;
     %>
     <%@ include file="discovery/static-sidebar-facet.jsp" %>
+
+
+<div class = "panel panel-default ">
+    <div class = "panel-heading">Email subscription</div>
+  <div class = "panel-body">
+    <%  if (submit_button)
+    { %>
+          <form class="form-group" action="<%= request.getContextPath() %>/submit" method="post">
+            <input type="hidden" name="collection" value="<%= collection.getID() %>" />
+      <input class="btn btn-success col-md-12" type="submit" name="submit" value="<fmt:message key="jsp.collection-home.submit.button"/>" />
+          </form>
+          <p>X Subscribe to this collection to receive daily e-mail notification of new additions</p>
+<%  } %>
+        <form  method="get" action="">
+<%  if (loggedIn && subscribed)
+    { %>
+                <small><fmt:message key="jsp.collection-home.subscribed"/> <a href="<%= request.getContextPath() %>/subscribe"><fmt:message key="jsp.collection-home.info"/></a></small>
+              <input class="btn btn-sm btn-warning" type="submit" name="submit_unsubscribe" value="<fmt:message key="jsp.collection-home.unsub"/>" />
+<%  } else { %>
+             
+                  <!--<fmt:message key="jsp.collection-home.subscribe.msg"/>-->
+              
+             <p>Daily email updates from this collection:</p>
+        <input class="btn btn-sm btn-info" type="submit" name="submit_subscribe" value="<fmt:message key="jsp.collection-home.subscribe"/>" />
+         
+<%  }
+%>
+        </form></div>
+</div>
+
   </dspace:sidebar>
 
 </dspace:layout>
