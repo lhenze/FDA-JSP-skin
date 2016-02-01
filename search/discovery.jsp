@@ -114,6 +114,29 @@
 <script type="text/javascript">
 	var jQ = jQuery.noConflict();
 	jQ(document).ready(function() {
+
+		jQ("#addafilter-link").click(function(e) {
+      console.log("clicked");
+      e.preventDefault();
+      openstate = jQ(".discovery-search-filters").is(":visible");
+      if (!openstate) {
+        jQ(".discovery-query").addClass("open");
+        jQ(".discovery-search-filters").slideDown("fast", function() {
+          console.log("1 animation done");
+
+        });
+      } else {
+        jQ(".discovery-query").removeClass("open");
+        jQ(".discovery-search-filters").slideUp("fast", function() {
+          console.log("2 animation done");
+
+        });
+      }
+
+
+    });
+
+
 		jQ( "#spellCheckQuery").click(function(){
 			jQ("#query").val(jQ(this).attr('data-spell'));
 			jQ("#main-query-submit").click();
@@ -160,9 +183,10 @@
     <%-- <h1>Search Results</h1> --%>
 
 <h2><fmt:message key="jsp.search.title"/></h2>
+
 <div class="discovery-search-form panel panel-default">
     <%-- Controls for a repeat search --%>
-	<div class="discovery-query panel-heading">
+	<div class="discovery-query panel-body">
     <form action="simple-search" method="get">
          <label for="tlocation">
          	<fmt:message key="jsp.search.results.searchin"/>
@@ -199,6 +223,11 @@
                                 <input type="hidden" value="<%= rpp %>" name="rpp" />
                                 <input type="hidden" value="<%= sortedBy %>" name="sort_by" />
                                 <input type="hidden" value="<%= order %>" name="order" />
+
+                            
+
+
+
 <% if (appliedFilters.size() > 0 ) { %>                                
 		<div class="discovery-search-appliedFilters">
 		<span><fmt:message key="jsp.search.filter.applied" /></span>
@@ -243,17 +272,22 @@
 				<%
 				idx++;
 			}
-		%>
-		</div>
+		%>    
+		</div>   
 <% } %>
-<a class="btn btn-default" href="<%= request.getContextPath()+"/simple-search" %>"><fmt:message key="jsp.search.general.new-search" /></a>	
+<a id="startnewsearch-link" class="interface-link" href="<%= request.getContextPath()+"/simple-search" %>"><fmt:message key="jsp.search.general.new-search" /></a>	
 		</form>
+		<a id="addafilter-link" class="interface-link" href="#">+ Add a filter</a>
 		</div>
 <% if (availableFilters.size() > 0) { %>
 		<div class="discovery-search-filters panel-body">
-		<h5><fmt:message key="jsp.search.filter.heading" /></h5>
-		<p class="discovery-search-filters-hint"><fmt:message key="jsp.search.filter.hint" /></p>
-		<form action="simple-search" method="get">
+			<form action="simple-search" method="get">
+				<div class="form-group-flex">
+			  	<div class="form-flex-item">
+            <label>And:</label>
+        	</div>
+        	<div class="form-flex-item">
+
 		<input type="hidden" value="<%= StringEscapeUtils.escapeHtml(searchScope) %>" name="location" />
 		<input type="hidden" value="<%= StringEscapeUtils.escapeHtml(query) %>" name="query" />
 		<% if (appliedFilterQueries.size() > 0 ) { 
@@ -277,7 +311,9 @@
 			    %><option value="<%= searchFilter.getIndexFieldName() %>"><fmt:message key="<%= fkey %>"/></option><%
 			}
 		%>
-		</select>
+		</select> 
+		</div>
+     <div class="form-flex-item">
 		<select id="filtertype" name="filtertype">
 		<%
 			for (String opt : options)
@@ -287,13 +323,17 @@
 			}
 		%>
 		</select>
+		  </div>
+      <div class="form-flex-item">
 		<input type="text" id="filterquery" name="filterquery" size="45" required="required" />
 		<input type="hidden" value="<%= rpp %>" name="rpp" />
 		<input type="hidden" value="<%= sortedBy %>" name="sort_by" />
 		<input type="hidden" value="<%= order %>" name="order" />
 		<input class="btn btn-default" type="submit" value="<fmt:message key="jsp.search.filter.add"/>" onclick="return validateFilters()" />
-		</form>
-		</div>        
+		</div>
+		</form></div>
+</div>
+	  
 <% } %>
         <%-- Include a component for modifying sort by, order, results per page, and et-al limit --%>
    <div class="discovery-pagination-controls panel-footer">
@@ -350,48 +390,8 @@
                <option value="ASC" <%= ascSelected %>><fmt:message key="search.order.asc" /></option>
                <option value="DESC" <%= descSelected %>><fmt:message key="search.order.desc" /></option>
            </select>
-           <label for="etal"><fmt:message key="search.results.etal" /></label>
-           <select name="etal">
-<%
-               String unlimitedSelect = "";
-               if (etAl < 1)
-               {
-                   unlimitedSelect = "selected=\"selected\"";
-               }
-%>
-               <option value="0" <%= unlimitedSelect %>><fmt:message key="browse.full.etal.unlimited"/></option>
-<%
-               boolean insertedCurrent = false;
-               for (int i = 0; i <= 50 ; i += 5)
-               {
-                   // for the first one, we want 1 author, not 0
-                   if (i == 0)
-                   {
-                       String sel = (i + 1 == etAl ? "selected=\"selected\"" : "");
-                       %><option value="1" <%= sel %>>1</option><%
-                   }
-
-                   // if the current i is greated than that configured by the user,
-                   // insert the one specified in the right place in the list
-                   if (i > etAl && !insertedCurrent && etAl > 1)
-                   {
-                       %><option value="<%= etAl %>" selected="selected"><%= etAl %></option><%
-                       insertedCurrent = true;
-                   }
-
-                   // determine if the current not-special case is selected
-                   String selected = (i == etAl ? "selected=\"selected\"" : "");
-
-                   // do this for all other cases than the first and the current
-                   if (i != 0 && i != etAl)
-                   {
-%>
-                       <option value="<%= i %>" <%= selected %>><%= i %></option>
-<%
-                   }
-               }
-%>
-           </select>
+         
+       
            <input class="btn btn-default" type="submit" name="submit_search" value="<fmt:message key="search.update" />" />
 
 <%
@@ -672,7 +672,7 @@ else
 	    int limit = facetConf.getFacetLimit()+1;
 	    
 	    String fkey = "jsp.search.facet.refine."+f;
-	    %><div id="facet_<%= f %>" class="panel panel-success">
+	    %><div id="facet_<%= f %>" class="panel">
 	    <div class="panel-heading"><fmt:message key="<%= fkey %>" /></div>
 	    <ul class="list-group"><%
 	    int idx = 1;
