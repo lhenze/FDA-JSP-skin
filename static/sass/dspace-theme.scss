@@ -1,0 +1,92 @@
+/* NYU theme LMH */
+
+/* Red #C50FC3  197 15 60
+Violet #57068C
+Taupe dark #A49483
+Taupe light B5ADA6   181, 173, 166
+link red #D11255   */
+$violet: #57068C;
+$violet-dark: #2D0054;
+$taupe-dark: #A49483;
+$taupe-light: #B5ADA6;
+$link-red: #D11255;
+$taupe-header: darken($taupe-dark, 15%);
+$text-color2: darken($taupe-dark, 25%);
+$text-color: darken($taupe-dark, 31%);
+$taupe-super-light: #F6F5F4;
+$cyan: #0077a2;
+
+@import "partials/_pagelayout";
+@import "partials/_panels";
+@import "partials/_search";
+@import "partials/_tree";
+@import "partials/_collectionpage";
+@import "partials/_topnavbar";
+@import "partials/_breadcrumbs";
+@import "partials/_mostdownloaded";
+@import "partials/_footer";
+@import "partials/_buttons";
+@import "partials/_admin";
+
+// body.undernavigation {
+//   overflow-x: hidden;
+//   padding-top: 65px;
+// }
+
+#content {
+  padding-bottom: 60px;
+  margin-top: 20px;
+}
+
+html {
+  font-size: 100%;
+}
+
+a:link,
+a:visited {
+  color: $cyan;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #A49483;
+  background-image: -webkit-gradient(linear, left 0, left 100%, from(#A49483), to(#8A7D6E));
+  background-image: -webkit-linear-gradient(top, #A49483, 0%, #8A7D6E, 100%);
+  background-image: -moz-linear-gradient(top, #A49483 0, #8A7D6E 100%);
+  background-image: linear-gradient(to bottom, #A49483 0, #8A7D6E 100%);
+  background-repeat: repeat-x;
+  border-color: #8A7D6E;
+}
+
+.btn-primary:hover {
+  background-image: -webkit-gradient(linear, left 0, left 100%, from(#8A7D6E), to(#A49483));
+  background-image: -webkit-linear-gradient(top, #8A7D6E, 0%, #A49483, 100%);
+  background-image: -moz-linear-gradient(top, #8A7D6E 0, #A49483 100%);
+  background-image: linear-gradient(to bottom, #8A7D6E 0, #A49483 100%);
+  background-repeat: repeat-x;
+  border-color: #8A7D6E;
+}
+
+.brand {
+  font-size: 1rem;
+  max-width: 44em;
+  h4 {
+    color: $taupe-dark;
+  }
+}
+
+.listofcommunities h3 a {
+  color: #333;
+  background-color: yellow;
+}
+
+.col-md-9 {
+  padding-right: 70px;
+}
+
+.collections-list {
+  h3 {
+    color: $text-color;
+    margin: 10px 0;
+  }
+}

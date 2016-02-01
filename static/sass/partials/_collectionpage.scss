@@ -1,0 +1,26 @@
+.browse_range {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.facet {
+  a {
+    padding: 10px 15px;
+    &:link, &:visited {
+      color: $text-color;
+      display: block;
+    }
+    &:hover {
+      background-color: lighten($taupe-super-light, 1%);
+    }
+    .pull-right {
+      float: none !important;
+      display: block;
+      text-align: right;
+    }
+  }
+  .list-group-item {
+    padding: 0;
+  }
+}

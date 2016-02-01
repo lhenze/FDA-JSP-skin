@@ -1,0 +1,166 @@
+$button-dark-color: #4F0787;
+$button-light-color: #955CE1;
+$button-dark-color: #A49483;
+$button-light-color: #8A7D6E;
+
+.form-group-flex {
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.panel-heading-simplesearch {
+  // background-color: rgba($taupe-light, 0.1);
+  padding-left: 15px;
+}
+
+.panel.simplesearchpanel {
+  max-width: 40em;
+  margin: 40px 0;
+  background-color: $taupe-super-light;
+  box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  h2 {
+    font-size: 1.1rem;
+    margin: 0.5em 0 0 0;
+    color: $taupe-header;
+  }
+}
+
+.discovery-result-pagination {
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.simplest-search {
+  .form-group-flex .input-hold {
+    display: block;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+  }
+  .form-group-flex .input-hold input {
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 17px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-right: none;
+    height: 40px;
+  }
+  .form-group-flex .button-hold {
+    min-width: 15%;
+    display: block;
+    -webkit-flex: 0 0 auto;
+    flex: 0 0 auto;
+    background-image: -webkit-gradient(linear, left 0, left 100%, from($button-light-color), to($button-dark-color));
+    background-image: -webkit-linear-gradient(top, $button-light-color, 0%, $button-dark-color, 100%);
+    background-image: -moz-linear-gradient(top, $button-light-color 0, $button-dark-color 100%);
+    background-image: linear-gradient(to bottom, $button-light-color 0, $button-dark-color 100%);
+    background-repeat: repeat-x;
+    /* border-radius: 4px;*/
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    /* border-bottom: 1px solid red;
+     border-right: 1px solid red;*/
+  }
+  .form-group-flex .button-hold button {
+    width: 100%;
+    background: transparent;
+    border: transparent;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    height: 40px;
+  }
+}
+
+.discovery-search-form {
+  background-color: lighten($taupe-light, 20%);
+  box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.1);
+  .discovery-query {
+    // max-width: 600px;
+    // background-color: lighten($taupe-light, 20%);
+    transition: all .1s ease-in;
+    .interface-link {
+      color: darken($taupe-dark, 20%);
+      text-decoration: underline;
+      display: inline-block;
+    }
+  }
+  label {
+    margin-bottom: 0;
+  }
+  .discovery-query.open {
+    padding: 15px 15px 0;
+  }
+  .form-group-flex {
+    margin: 10px 0;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  select {
+    font-size: 2rem;
+  }
+  .form-flex-item {
+    display: block;
+    -webkit-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-content: space-around;
+    -ms-flex-line-pack: distribute;
+    align-content: space-around;
+    /*  background-color: red;*/
+    margin-right: 10px;
+  }
+  .form-flex-item:last-child {
+    margin-right: 0px;
+  }
+  .form-flex-item.item-label {
+    -webkit-flex: 0 0 auto;
+    flex: 0 0 auto;
+  }
+  .discovery-search-filters {
+    //display: none;
+    width: 100% !important;
+    background-color: lighten($taupe-light, 10%);
+  }
+}
+
+.discovery-pagination-controls {
+  .form-group-flex {
+    /*background-color: pink;*/
+    margin-bottom: 15px;
+    display: none;
+  }
+  .form-flex-item {
+    /*  background-color: red;*/
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-content: space-around;
+    -ms-flex-line-pack: distribute;
+    align-content: space-around;
+    /*border-right: 1px solid brown;*/
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+.remove-filter .btn {
+  padding: 2px 0 0 0;
+  height: 25px;
+  width: 25px;
+}
+
+.small-button .btn {
+  padding: 2px 5px 0 5px;
+  height: 25px;
+}
