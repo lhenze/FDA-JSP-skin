@@ -472,61 +472,6 @@ else if( qResults != null)
     </fmt:message></h3>
 
 
- <ul class="pagination pull-right">
-	<%
-	if (pageFirst != pageCurrent)
-	{
-	    %><li><a href="<%= prevURL %>"><fmt:message key="jsp.search.general.previous" /></a></li><%
-	}
-	else
-	{
-	    %><li class="disabled"><span><fmt:message key="jsp.search.general.previous" /></span></li><%
-	}
-	
-	if (pageFirst != 1)
-	{
-	    %><li><a href="<%= firstURL %>">1</a></li><li>...</li><%
-	}
-	
-	for( long q = pageFirst; q <= pageLast; q++ )
-	{
-	    String myLink = "<li><a href=\""
-	                    + baseURL;
-	
-	
-	    if( q == pageCurrent )
-	    {
-	        myLink = "<li class=\"active\"><span>" + q + "</span></li>";
-	    }
-	    else
-	    {
-	        myLink = myLink
-	            + (q-1) * qResults.getMaxResults()
-	            + "\">"
-	            + q
-	            + "</a></li>";
-	    }
-	%>
-	
-	<%= myLink %>
-
-	<%
-	}
-	
-	if (pageTotal > pageLast)
-	{
-	    %><li class="disabled"><span>...</span></li><li><a href="<%= lastURL %>"><%= pageTotal %></a></li><%
-	}
-	if (pageTotal > pageCurrent)
-	{
-	    %><li><a href="<%= nextURL %>"><fmt:message key="jsp.search.general.next" /></a></li><%
-	}
-	else
-	{
-	    %><li class="disabled"><span><fmt:message key="jsp.search.general.next" /></span></li><%
-	}
-	%>
-	</ul>
 
 
 <!-- give a content to the div -->
