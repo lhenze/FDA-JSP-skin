@@ -192,7 +192,7 @@
     		<div class="form-flex-item">
         	<label for="tlocation"><fmt:message key="jsp.search.results.searchin"/></label></div>
          	<div class="form-flex-item">
-         <select name="location" id="tlocation">
+         		<select name="location" id="tlocation">
 <%
     if (scope == null)
     {
@@ -221,10 +221,10 @@
      			<div class="form-flex-item"><input type="text" size="50" id="query" class="form-control" name="query" value="<%= (query==null ? "" : StringEscapeUtils.escapeHtml(query)) %>"/></div>
       		<div class="form-flex-item">
       			<button id="main-query-submit" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
-
-      		 <input type="hidden" value="<%= rpp %>" name="rpp" />
-                                <input type="hidden" value="<%= sortedBy %>" name="sort_by" />
-                                <input type="hidden" value="<%= order %>" name="order" /></div>
+						<input type="hidden" value="<%= rpp %>" name="rpp" />
+						<input type="hidden" value="<%= sortedBy %>" name="sort_by" />
+						<input type="hidden" value="<%= order %>" name="order" />
+					</div>
 	
 					<% if (StringUtils.isNotBlank(spellCheckQuery)) {%>
 						<p class="lead"><fmt:message key="jsp.search.didyoumean"><fmt:param><a id="spellCheckQuery" data-spell="<%= StringEscapeUtils.escapeHtml(spellCheckQuery) %>" href="#"><%= spellCheckQuery %></a></fmt:param></fmt:message></p>
@@ -232,7 +232,7 @@
 			</div>  
 
 	
-		<div class="form-group-flex">
+	
 
 <% if (appliedFilters.size() > 0 ) { %>                                
 
@@ -243,7 +243,7 @@
 			    boolean found = false;
 			    %>
 
-			    	
+			<div class="form-group-flex">
 			<div class="form-flex-item" >	
 				<% if (idx == 1 ) { %>  
 				<label>where </label>  
@@ -251,7 +251,7 @@
 				<label>and </label> 
 					<%  }  %>  
 				</div>
-					<div class="form-flex-item" >	
+				<div class="form-flex-item" >	
 			    <select id="filter_field_<%=idx %>" name="filter_field_<%=idx %>">
 				<%
 					for (DiscoverySearchFilter searchFilter : availableFilters)
@@ -284,13 +284,14 @@
 				<input type="text" id="filter_value_<%=idx %>" name="filter_value_<%=idx %>" value="<%= StringEscapeUtils.escapeHtml(filter[2]) %>" size="45"/>
 				<input class="btn btn-default" type="submit" id="submit_filter_remove_<%=idx %>" name="submit_filter_remove_<%=idx %>" value="X" />
 			</div>
+</div>
 				<%
 				idx++;
 			}
 		%>    
 	
 <% } %>
-  </div>
+  
 		</form>
 
 	<!--	<a id="startnewsearch-link" class="interface-link" href="<%= request.getContextPath()+"/simple-search" %>"><fmt:message key="jsp.search.general.new-search" /></a>	-->
@@ -626,7 +627,7 @@ else
 %>
 
 <h3 class="facets"><fmt:message key="jsp.search.facet.refine" /></h3>
-<div id="facets" class="facetsBox">
+<div id="facets" class="facets">
 
 <%
 	for (DiscoverySearchFilterFacet facetConf : facetsConf)
@@ -655,7 +656,7 @@ else
 	    { 
 	        if (idx != limit && !appliedFilterQueries.contains(f+"::"+fvalue.getFilterType()+"::"+fvalue.getAsFilterQuery()))
 	        {
-	        %><li class="list-group-item"><span class="badge"><%= fvalue.getCount() %></span> <a href="<%= request.getContextPath()
+	        %><li class="list-group-item"><a href="<%= request.getContextPath()
                 + (searchScope!=""?"/handle/"+searchScope:"")
                 + "/simple-search?query="
                 + URLEncoder.encode(query,"UTF-8")
@@ -668,6 +669,7 @@ else
                 + "&amp;filterquery="+URLEncoder.encode(fvalue.getAsFilterQuery(),"UTF-8")
                 + "&amp;filtertype="+URLEncoder.encode(fvalue.getFilterType(),"UTF-8") %>"
                 title="<fmt:message key="jsp.search.facet.narrow"><fmt:param><%=fvalue.getDisplayedValue() %></fmt:param></fmt:message>">
+                <span class="badge"><%= fvalue.getCount() %></span> 
                 <%= StringUtils.abbreviate(fvalue.getDisplayedValue(),36) %></a></li><%
                 idx++;
 	        }
