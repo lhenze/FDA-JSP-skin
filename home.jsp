@@ -97,12 +97,11 @@
     }
 %>
 <dspace:layout locbar="noLink" titlekey="jsp.home.title" feedData="<%= feedData %>">
- <div class="container banner">
+
           <div class="row">
             <div class="col-md-8 ">
               <div class="brand">
-                <!-- <h3>Faculty Digital Archive</h3> -->
-                <!--   <p><strong>What is the Faculty Digital Archive (FDA)?</strong><br />-->
+             
                 The Faculty Digital Archive (FDA) is a highly visible repository of NYU scholarship, allowing digital works—text, audio, video, data, and more—to be reliably shared and securely stored. Collections may be made freely available worldwide, offered to NYU only, or restricted to a specific group.</p>
                 Full-time faculty may contribute their research—unpublished and, in many cases, published—in the FDA. Departments, centers, or institutes may use the FDA to distribute their working papers, technical reports, or other research material. <a href="http://www.nyu.edu/its/faculty/fda" class="readmore">Read more...</a></p>
               </div>
@@ -196,5 +195,5 @@ if (submissions != null && submissions.count() > 0)
               </div>
             </div> <!-- end col 4 -->
           </div> <!-- end col row  -->
-        </div>
+     
 </dspace:layout>
