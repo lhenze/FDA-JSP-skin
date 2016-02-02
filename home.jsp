@@ -105,19 +105,19 @@
                 The Faculty Digital Archive (FDA) is a highly visible repository of NYU scholarship, allowing digital works—text, audio, video, data, and more—to be reliably shared and securely stored. Collections may be made freely available worldwide, offered to NYU only, or restricted to a specific group.</p>
                 Full-time faculty may contribute their research—unpublished and, in many cases, published—in the FDA. Departments, centers, or institutes may use the FDA to distribute their working papers, technical reports, or other research material. <a href="http://www.nyu.edu/its/faculty/fda" class="readmore">Read more...</a></p>
               </div>
-              <div class="panel panel-primary simplesearchpanel">
-  <div class="panel-heading">Search:</div>
-  <div class="panel-body">
+
+<section class="search-area">
   <form method="get" action="simple-search" class="simplest-search">
- <div class="form-group-flex">
-   <div class="input-hold">
-      <input type="text" class="form-control" placeholder="Titles, authors, keywords..." name="query" id="tequery" ></div>
-   <div class="button-hold">   <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button></div>
-   </div>
+    <div class="form-group-flex">
+      <div class="input-hold">
+      <input type="text" class="form-control" placeholder="Search titles, authors, keywords..." name="query" id="tequery" ></div>
+      <div class="button-hold">   <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button></div>
+    </div>
   </form>
-</div>
-</div>  
-              <div class="fda-tree">
+ </section>
+
+
+<div class="fda-tree">
 <%
 for (int i = 0; i < communities.length; i++)
         {%>

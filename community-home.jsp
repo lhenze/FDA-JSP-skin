@@ -126,26 +126,23 @@
 <div class="container">
 <div class="row">
 	<div class="col-md-8">
-        <div class="page-title-area">
-        <h2><%= name %></h2>
-         </div>
+        <div class="page-title-area"><h2><%= name %></h2></div>
 <%  if (logo != null) { %>
-     <div class="col-md-4">
+     <div class="img-hold">
      	<img class="img-responsive" alt="Logo" src="<%= request.getContextPath() %>/retrieve/<%= logo.getID() %>" />
      </div> 
 <% } %>
-<div class="panel panel-primary">
-  <div class="panel-heading">Search within this community:</div>
-  <div class="panel-body">
+
+
+<section class="search-area">
   <form method="get" action="simple-search" class="simplest-search">
- <div class="form-group-flex">
-   <div class="input-hold">
-      <input type="text" class="form-control" placeholder="Titles, authors, keywords..." name="query" id="tequery" ></div>
-   <div class="button-hold">   <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button></div>
-   </div>
+    <div class="form-group-flex">
+      <div class="input-hold"><input type="text" class="form-control" placeholder="Search titles, authors, keywords..." name="query" id="tequery" ></div>
+      <div class="button-hold">   <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button></div>
+    </div>
   </form>
-</div>
-</div>
+</section>
+
 <div class="row">
         <%@ include file="discovery/static-tagcloud-facet.jsp" %>
 </div>
