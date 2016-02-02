@@ -196,13 +196,22 @@ link red #D11255   */
   font-size: 1.5rem;
 }
 
-/* line 39, ../../sass/partials/_search.scss */
+/* line 38, ../../sass/partials/_search.scss */
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  z-index: 2;
+  color: #fff;
+  cursor: default;
+  background-color: #57068C;
+  border-color: #57068C;
+}
+
+/* line 47, ../../sass/partials/_search.scss */
 .simplest-search .form-group-flex .input-hold {
   display: block;
   -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
 }
-/* line 44, ../../sass/partials/_search.scss */
+/* line 52, ../../sass/partials/_search.scss */
 .simplest-search .form-group-flex .input-hold input {
   width: 100%;
   padding: 6px 12px;
@@ -212,7 +221,7 @@ link red #D11255   */
   border-right: none;
   height: 40px;
 }
-/* line 53, ../../sass/partials/_search.scss */
+/* line 61, ../../sass/partials/_search.scss */
 .simplest-search .form-group-flex .button-hold {
   min-width: 15%;
   display: block;
@@ -229,7 +238,7 @@ link red #D11255   */
   /* border-bottom: 1px solid red;
    border-right: 1px solid red;*/
 }
-/* line 69, ../../sass/partials/_search.scss */
+/* line 77, ../../sass/partials/_search.scss */
 .simplest-search .form-group-flex .button-hold button {
   width: 100%;
   background: transparent;
@@ -239,30 +248,30 @@ link red #D11255   */
   height: 40px;
 }
 
-/* line 79, ../../sass/partials/_search.scss */
+/* line 87, ../../sass/partials/_search.scss */
 .discovery-search-form {
   background-color: #e3e0de;
   box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.1);
 }
-/* line 82, ../../sass/partials/_search.scss */
+/* line 90, ../../sass/partials/_search.scss */
 .discovery-search-form .discovery-query {
   transition: all .1s ease-in;
 }
-/* line 86, ../../sass/partials/_search.scss */
+/* line 94, ../../sass/partials/_search.scss */
 .discovery-search-form .discovery-query .interface-link {
   color: #6f6152;
   text-decoration: underline;
   display: inline-block;
 }
-/* line 92, ../../sass/partials/_search.scss */
+/* line 100, ../../sass/partials/_search.scss */
 .discovery-search-form label {
   margin-bottom: 0;
 }
-/* line 95, ../../sass/partials/_search.scss */
+/* line 103, ../../sass/partials/_search.scss */
 .discovery-search-form .discovery-query.open {
   padding: 15px 15px 0;
 }
-/* line 98, ../../sass/partials/_search.scss */
+/* line 106, ../../sass/partials/_search.scss */
 .discovery-search-form .form-group-flex {
   margin: 10px 0;
   display: flex;
@@ -275,11 +284,11 @@ link red #D11255   */
   -ms-flex-align: center;
   align-items: center;
 }
-/* line 110, ../../sass/partials/_search.scss */
+/* line 118, ../../sass/partials/_search.scss */
 .discovery-search-form select {
   font-size: 2rem;
 }
-/* line 113, ../../sass/partials/_search.scss */
+/* line 121, ../../sass/partials/_search.scss */
 .discovery-search-form .form-flex-item {
   display: block;
   -webkit-flex: 0 1 auto;
@@ -290,33 +299,49 @@ link red #D11255   */
   /*  background-color: red;*/
   margin-right: 10px;
 }
-/* line 123, ../../sass/partials/_search.scss */
+/* line 131, ../../sass/partials/_search.scss */
 .discovery-search-form .form-flex-item:last-child {
   margin-right: 0px;
 }
-/* line 126, ../../sass/partials/_search.scss */
+/* line 134, ../../sass/partials/_search.scss */
 .discovery-search-form .form-flex-item.item-label {
   -webkit-flex: 0 0 auto;
   flex: 0 0 auto;
 }
-/* line 130, ../../sass/partials/_search.scss */
+/* line 138, ../../sass/partials/_search.scss */
 .discovery-search-form .discovery-search-filters {
+  display: none;
   width: 100% !important;
   background-color: #ccc7c2;
 }
 
-/* line 137, ../../sass/partials/_search.scss */
+/* line 145, ../../sass/partials/_search.scss */
 #startnewsearch-link {
   display: block;
 }
 
-/* line 142, ../../sass/partials/_search.scss */
+/* line 149, ../../sass/partials/_search.scss */
+.resultsnum span {
+  font-size: 1rem;
+}
+
+/* line 153, ../../sass/partials/_search.scss */
+input#query {
+  width: 100%;
+  padding: 6px 12px;
+  font-size: 17px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-right: none;
+}
+
+/* line 163, ../../sass/partials/_search.scss */
 .discovery-pagination-controls .form-group-flex {
   /*background-color: pink;*/
   margin-bottom: 15px;
   display: none;
 }
-/* line 147, ../../sass/partials/_search.scss */
+/* line 168, ../../sass/partials/_search.scss */
 .discovery-pagination-controls .form-flex-item {
   /*  background-color: red;*/
   -webkit-flex: 1 1 auto;
@@ -330,14 +355,14 @@ link red #D11255   */
   align-items: center;
 }
 
-/* line 161, ../../sass/partials/_search.scss */
+/* line 182, ../../sass/partials/_search.scss */
 .remove-filter .btn {
   padding: 2px 0 0 0;
   height: 25px;
   width: 25px;
 }
 
-/* line 167, ../../sass/partials/_search.scss */
+/* line 188, ../../sass/partials/_search.scss */
 .small-button .btn {
   padding: 2px 5px 0 5px;
   height: 25px;
@@ -424,30 +449,6 @@ link red #D11255   */
   font-size: 1.1em;
   margin-bottom: 10px;
   font-weight: 500;
-}
-
-/* line 8, ../../sass/partials/_collectionpage.scss */
-.facet a {
-  padding: 10px 15px;
-}
-/* line 10, ../../sass/partials/_collectionpage.scss */
-.facet a:link, .facet a:visited {
-  color: #4f453a;
-  display: block;
-}
-/* line 14, ../../sass/partials/_collectionpage.scss */
-.facet a:hover {
-  background-color: #f8f8f7;
-}
-/* line 17, ../../sass/partials/_collectionpage.scss */
-.facet a .pull-right {
-  float: none !important;
-  display: block;
-  text-align: right;
-}
-/* line 23, ../../sass/partials/_collectionpage.scss */
-.facet .list-group-item {
-  padding: 0;
 }
 
 /* line 1, ../../sass/partials/_topnavbar.scss */
@@ -741,6 +742,30 @@ footer.navbar a:hover {
   border-color: #8A7D6E;
 }
 
+/* line 2, ../../sass/partials/_facets.scss */
+.facets a {
+  padding: 10px 15px;
+}
+/* line 4, ../../sass/partials/_facets.scss */
+.facets a:link, .facets a:visited {
+  color: #4f453a;
+  display: block;
+}
+/* line 8, ../../sass/partials/_facets.scss */
+.facets a:hover {
+  background-color: #f8f8f7;
+}
+/* line 11, ../../sass/partials/_facets.scss */
+.facets a .pull-right {
+  float: none !important;
+  display: block;
+  text-align: right;
+}
+/* line 17, ../../sass/partials/_facets.scss */
+.facets li {
+  padding: 0;
+}
+
 /* line 1, ../../sass/partials/_admin.scss */
 .help-block {
   margin-top: 15px;
@@ -751,39 +776,39 @@ form.edit_metadata {
   max-width: 900px;
 }
 
-/* line 31, ../../sass/dspace-theme.scss */
+/* line 32, ../../sass/dspace-theme.scss */
 html {
   font-size: 100%;
 }
 
-/* line 35, ../../sass/dspace-theme.scss */
+/* line 36, ../../sass/dspace-theme.scss */
 #content {
   padding-bottom: 60px;
   margin-top: 20px;
 }
 
-/* line 40, ../../sass/dspace-theme.scss */
+/* line 41, ../../sass/dspace-theme.scss */
 a:link,
 a:visited {
   color: #0077a2;
 }
 
-/* line 45, ../../sass/dspace-theme.scss */
+/* line 46, ../../sass/dspace-theme.scss */
 .brand {
   font-size: 1rem;
   max-width: 44em;
 }
-/* line 48, ../../sass/dspace-theme.scss */
+/* line 49, ../../sass/dspace-theme.scss */
 .brand h4 {
   color: #A49483;
 }
 
-/* line 53, ../../sass/dspace-theme.scss */
+/* line 54, ../../sass/dspace-theme.scss */
 .col-md-9 > * {
   max-width: 50rem;
 }
 
-/* line 58, ../../sass/dspace-theme.scss */
+/* line 59, ../../sass/dspace-theme.scss */
 .collections-list h3 {
   color: #4f453a;
   margin: 10px 0;

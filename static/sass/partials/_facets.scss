@@ -1,0 +1,20 @@
+.facets {
+  a {
+    padding: 10px 15px;
+    &:link, &:visited {
+      color: $text-color;
+      display: block;
+    }
+    &:hover {
+      background-color: lighten($taupe-super-light, 1%);
+    }
+    .pull-right {
+      float: none !important;
+      display: block;
+      text-align: right;
+    }
+  }
+  li {
+    padding: 0;
+  }
+}
