@@ -329,7 +329,7 @@
             <input type="hidden" name="collection" value="<%= collection.getID() %>" />
       <input class="btn btn-success col-md-12" type="submit" name="submit" value="<fmt:message key="jsp.collection-home.submit.button"/>" />
           </form>
-          <p>X Subscribe to this collection to receive daily e-mail notification of new additions</p>
+          <p>Subscribe to this collection to receive daily e-mail notification of new additions</p>
 <%  } %>
         <form  method="get" action="">
 <%  if (loggedIn && subscribed)
