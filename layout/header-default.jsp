@@ -117,7 +117,7 @@
   <script src="<%= request.getContextPath() %>/static/js/html5shiv.js"></script>
   <script src="<%= request.getContextPath() %>/static/js/respond.min.js"></script>
 <![endif]-->
-  </script>
+  
     </head>
     <%-- HACK: leftmargin, topmargin: for non-CSS compliant Microsoft IE browser --%>
     <%-- HACK: marginwidth, marginheight: for non-CSS compliant Netscape browser --%>
@@ -171,7 +171,7 @@
   });
   </script>
 </header>
-<main id="content" role="main">
+<main id="content">
 <%
     if (locbar)
     {
