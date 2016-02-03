@@ -187,9 +187,11 @@
 
     String displayStyle = (displayAll ? "full" : "");
 %>
+
     <dspace:item-preview item="<%= item %>" />
     <dspace:item item="<%= item %>" collections="<%= collections %>" style="<%= displayStyle %>" />
-<div class="container row">
+    <div class="container row">
+        <!-- just after files in this item -->
 <%
     String locationLink = request.getContextPath() + "/handle/" + handle;
 
@@ -329,7 +331,7 @@
     if (cc_url != null)
     {
 %>
-    <p class="submitFormHelp alert alert-info"><fmt:message key="jsp.display-item.text3"/> <a href="<%= cc_url %>"><fmt:message key="jsp.display-item.license"/></a>
+    <p class="submitFormHelp"><fmt:message key="jsp.display-item.text3"/> <a href="<%= cc_url %>"><fmt:message key="jsp.display-item.license"/></a>
     <a href="<%= cc_url %>"><img src="<%= request.getContextPath() %>/image/cc-somerights.gif" border="0" alt="Creative Commons" style="margin-top: -5px;" class="pull-right"/></a>
     </p>
     <!--
@@ -338,7 +340,7 @@
 <%
     } else {
 %>
-    <p class="submitFormHelp alert alert-info"><fmt:message key="jsp.display-item.copyright"/></p>
+    <p class="submitFormHelp"><fmt:message key="jsp.display-item.copyright"/></p>
 <%
     } 
 %>    
