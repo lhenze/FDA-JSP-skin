@@ -1,3 +1,23 @@
+/* flexbox sticky footer */
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+}
+
+header.navbar,
+footer.navbar {
+  flex: none;
+}
+
+#content {
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+/* end flexbox sticky footer */
+
 .page-title-area, .search-area {
   max-width: 45rem;
 }

@@ -5,59 +5,49 @@ Taupe dark #A49483
 Taupe light B5ADA6   181, 173, 166
 link red #D11255   */
 /* flexbox sticky footer */
-/**
- * 1. Avoid the IE 10-11 `min-height` bug.
- * 2. Set `flex-shrink` to `0` to prevent some browsers from
- *    letting these items shrink to smaller than their content's default
- *    minimum size. See http://bit.ly/1Mn35US for details.
- * 3. Use `%` instead of `vh` since `vh` is buggy in older mobile Safari.
- */
-/* line 11, ../../sass/partials/_pagelayout.scss */
+/* line 2, ../../sass/partials/_pagelayout.scss */
 body {
   display: flex;
   flex-direction: column;
   height: 100%;
   min-height: 100vh;
-  /* 1, 3 */
 }
 
-/* line 19, ../../sass/partials/_pagelayout.scss */
+/* line 9, ../../sass/partials/_pagelayout.scss */
 header.navbar,
 footer.navbar {
   flex: none;
-  /* 2 */
 }
 
-/* line 25, ../../sass/partials/_pagelayout.scss */
+/* line 14, ../../sass/partials/_pagelayout.scss */
 #content {
   flex: 1 0 auto;
-  /* 2 */
   width: 100%;
 }
 
 /* end flexbox sticky footer */
-/* line 34, ../../sass/partials/_pagelayout.scss */
+/* line 21, ../../sass/partials/_pagelayout.scss */
 .page-title-area, .search-area {
   max-width: 45rem;
 }
 
-/* line 38, ../../sass/partials/_pagelayout.scss */
+/* line 25, ../../sass/partials/_pagelayout.scss */
 .page-title-area {
   padding-bottom: 3px;
 }
-/* line 40, ../../sass/partials/_pagelayout.scss */
+/* line 27, ../../sass/partials/_pagelayout.scss */
 .page-title-area h2 {
   font-size: 2rem;
   margin-bottom: 5px;
   padding-bottom: 0;
 }
 
-/* line 47, ../../sass/partials/_pagelayout.scss */
+/* line 34, ../../sass/partials/_pagelayout.scss */
 .collections-list {
   margin-top: 30px;
 }
 
-/* line 51, ../../sass/partials/_pagelayout.scss */
+/* line 38, ../../sass/partials/_pagelayout.scss */
 .table thead > tr > th,
 .table tbody > tr > th,
 .table tfoot > tr > th,
@@ -68,14 +58,14 @@ footer.navbar {
   text-align: left;
 }
 
-/* line 61, ../../sass/partials/_pagelayout.scss */
+/* line 48, ../../sass/partials/_pagelayout.scss */
 .table td:first-child {
   padding-right: 25px;
   text-align: left;
   white-space: nowrap;
 }
 
-/* line 67, ../../sass/partials/_pagelayout.scss */
+/* line 54, ../../sass/partials/_pagelayout.scss */
 .table td:nth-child(2) {
   padding-right: 25px;
   text-align: left;
