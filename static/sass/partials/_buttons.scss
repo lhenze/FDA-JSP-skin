@@ -28,3 +28,27 @@
   background-repeat: repeat-x;
   border-color: #8A7D6E;
 }
+
+.btn-success {
+  color: #fff;
+  padding: 8px 20px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+  background-color: $violet_bright2;
+  background-image: -webkit-gradient(linear, left 0, left 100%, from($violet_bright), to($violet_bright2));
+  background-image: -webkit-linear-gradient(top, $violet_bright, 0%, $violet_bright2, 100%);
+  background-image: -moz-linear-gradient(top, $violet_bright 0, $violet_bright2 100%);
+  background-image: linear-gradient(to bottom, $violet_bright 0, $violet_bright2 100%);
+  background-repeat: repeat-x;
+  border-color: $violet;
+}
+
+.btn-success:hover {
+  color: #fff;
+  background-color: $violet_bright;
+  background-image: -webkit-gradient(linear, left 0, left 100%, from($violet_bright2), to($violet_bright));
+  background-image: -webkit-linear-gradient(top, $violet_bright2, 0%, $violet_bright, 100%);
+  background-image: -moz-linear-gradient(top, $violet_bright2 0, $violet_bright 100%);
+  background-image: linear-gradient(to bottom, $violet_bright2 0, $violet_bright 100%);
+  background-repeat: repeat-x;
+  border-color: $violet;
+}

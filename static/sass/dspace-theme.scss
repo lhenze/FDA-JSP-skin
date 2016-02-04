@@ -6,7 +6,9 @@ Taupe dark #A49483
 Taupe light B5ADA6   181, 173, 166
 link red #D11255   */
 $violet: #57068C;
-$violet-dark: #2D0054;
+$violet_bright: #8300D7;
+$violet_bright2: darken($violet_bright, 7%);
+$violet-dark: darken($violet, 8%);
 $taupe-dark: #A49483;
 $taupe-light: #B5ADA6;
 $link-red: #D11255;

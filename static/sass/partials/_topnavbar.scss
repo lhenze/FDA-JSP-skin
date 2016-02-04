@@ -44,6 +44,7 @@ header div.navbar-right {
   }
   .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
     background-color: $violet-dark;
+    border-color: $violet-dark;
   }
   .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
     color: #fff;
