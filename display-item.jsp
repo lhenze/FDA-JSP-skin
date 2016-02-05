@@ -132,12 +132,7 @@
 		<%
 		    }
 		%>
-		
-
-                <%-- <strong>Please use this identifier to cite or link to this item:
-                <code><%= HandleManager.getCanonicalForm(handle) %></code></strong>--%>
-                <div class="well"><fmt:message key="jsp.display-item.identifier"/>
-                <code><%= HandleManager.getCanonicalForm(handle) %></code></div>
+		<!-- side bar --> 
 <%
         if (admin_button)  // admin edit button
         { %>
@@ -187,8 +182,16 @@
 
     String displayStyle = (displayAll ? "full" : "");
 %>
+
+  <!-- Here's the item itself -->
     <dspace:item-preview item="<%= item %>" />
     <dspace:item item="<%= item %>" collections="<%= collections %>" style="<%= displayStyle %>" />
+
+
+    <!-- show full item record button -->
+
+
+
 <div class="container row">
 <%
     String locationLink = request.getContextPath() + "/handle/" + handle;
