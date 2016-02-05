@@ -29,6 +29,7 @@
 <%@ taglib uri="http://www.dspace.org/dspace-tags.tld" prefix="dspace" %>
 
 <%@ page import="org.dspace.app.webui.components.RecentSubmissions" %>
+<%@ page import="org.dspace.app.webui.components.MostDownloaded" %>
 
 <%@ page import="org.dspace.app.webui.servlet.admin.EditCommunitiesServlet" %>
 <%@ page import="org.dspace.app.webui.util.UIUtil" %>
@@ -49,6 +50,7 @@
     Group      submitters = (Group) request.getAttribute("submitters");
 
     RecentSubmissions rs = (RecentSubmissions) request.getAttribute("recently.submitted");
+    MostDownloaded mostdownloaded = (MostDownloaded) request.getAttribute("most.downloaded");
     
     boolean loggedIn =
         ((Boolean) request.getAttribute("logged.in")).booleanValue();
@@ -105,13 +107,13 @@
 <%@page import="org.dspace.app.webui.servlet.MyDSpaceServlet"%>
 <dspace:layout locbar="commLink" title="<%= name %>" feedData="<%= feedData %>">
 
-    <div class="row"><div class="col-md-8"><h2><%= name %></h2></div>
-<%  if (logo != null) { %>
+   <h2><%= name %></h2>
+      <%  if (logo != null) { %>
         <div class="col-md-4">
         	<img class="img-responsive pull-right" alt="Logo" src="<%= request.getContextPath() %>/retrieve/<%= logo.getID() %>" />
         </div>
 <% 	} %>
-	</div>
+
 <%
 	if (StringUtils.isNotBlank(intro)) { %>
   <div class="description">
@@ -143,6 +145,7 @@
   </section>
   </div>
 </div>
+
 <% if (show_items)
    {
         BrowseInfo bi = (BrowseInfo) request.getAttribute("browse.info");
@@ -219,6 +222,58 @@
 %>
 
   <dspace:sidebar>
+
+   <%if (mostdownloaded != null && mostdownloaded.count() > 0)
+      {
+      %>
+                           <div class="panel panel-primary homepage-sidebar">
+                             <div class="panel-heading"><h1>Most downloaded</h1></div>
+                             <div class="panel-body">
+
+                          <%
+
+                          for (Item item : mostdownloaded.getMostDownloaded())
+                          {
+
+                            if(item.isPublic()||editor_button) {
+                              Collection col=item.getCollections()[0];
+                              Metadatum[] dcv = item.getMetadata("dc", "title", null, Item.ANY);
+                              String displayTitle = "Untitled";
+                              if (dcv != null & dcv.length > 0)
+                              {
+                                  displayTitle = dcv[0].value;
+                              }
+                              dcv = item.getMetadata("dc", "contributor", "author", Item.ANY);
+                              Metadatum[] authors =dcv;
+
+                      %>
+                          <article >
+                          <div class="communityflag"><span>Collection:</span>
+                              <a href="<%= request.getContextPath() %>/handle/<%=col.getHandle() %>" ><%= col.getName()  %></a></div>
+                              <h1><a href="<%= request.getContextPath() %>/handle/<%=item.getHandle() %>"><%= displayTitle %></a></h1>
+                              <% if (dcv!=null&&dcv.length>0)
+                                  {
+                                   for(int i=0;i<authors.length;i++)
+                                   {
+                                     String authorQuery=""+request.getContextPath()+"/simple-search?filterquery="
+                                                   +URLEncoder.encode(authors[i].value,"UTF-8")
+                                                   + "&amp;filtername="+URLEncoder.encode("author","UTF-8")+"&amp;filtertype="
+                                                   +URLEncoder.encode("equals","UTF-8");
+                              %>
+                              	   <div class="authors">
+                              		 <a class="authors" href="<%=authorQuery %>"> <%= StringUtils.abbreviate(authors[i].value,36) %></a>
+                              	   </div>
+                                 <% }
+                                 } %>
+                         </article>
+                        <%
+                         }
+                        }
+
+      %>     </div>
+              </div>
+
+          <%} %>
 
 
 <% if(admin_button || editor_button ) { %>
@@ -322,7 +377,7 @@
              
                   <!--<fmt:message key="jsp.collection-home.subscribe.msg"/>-->
               
-             <p>Receive email updates when new material is added to this collection:</p>
+             <p>Receive email updates when new material is added to this collection.</p>
         <input class="btn btn-sm btn-info" type="submit" name="submit_subscribe" value="<fmt:message key="jsp.collection-home.subscribe"/>" />
          
 <%  }
