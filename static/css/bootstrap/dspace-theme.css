@@ -26,28 +26,40 @@ footer.navbar {
 }
 
 /* end flexbox sticky footer */
-/* line 21, ../../sass/partials/_pagelayout.scss */
+/* line 20, ../../sass/partials/_pagelayout.scss */
+.col-md-9 > * {
+  max-width: 50rem;
+}
+
+/* line 24, ../../sass/partials/_pagelayout.scss */
 .page-title-area, .search-area {
   max-width: 45rem;
 }
 
-/* line 25, ../../sass/partials/_pagelayout.scss */
+/* line 28, ../../sass/partials/_pagelayout.scss */
+body .search-area {
+  max-width: 35rem;
+}
+
+/* line 32, ../../sass/partials/_pagelayout.scss */
 .page-title-area {
   padding-bottom: 3px;
+  width: auto;
+  overflow: auto;
 }
-/* line 27, ../../sass/partials/_pagelayout.scss */
+/* line 36, ../../sass/partials/_pagelayout.scss */
 .page-title-area h2 {
   font-size: 2rem;
   margin-bottom: 5px;
   padding-bottom: 0;
 }
-
-/* line 34, ../../sass/partials/_pagelayout.scss */
-.collections-list {
-  margin-top: 30px;
+/* line 41, ../../sass/partials/_pagelayout.scss */
+.page-title-area .img-hold {
+  float: left;
+  margin-right: 20px;
 }
 
-/* line 38, ../../sass/partials/_pagelayout.scss */
+/* line 47, ../../sass/partials/_pagelayout.scss */
 .table thead > tr > th,
 .table tbody > tr > th,
 .table tfoot > tr > th,
@@ -58,31 +70,32 @@ footer.navbar {
   text-align: left;
 }
 
-/* line 48, ../../sass/partials/_pagelayout.scss */
-.table td:first-child {
+/* line 59, ../../sass/partials/_pagelayout.scss */
+.discovery-result-results .table td:first-child, .collectionlist .table td:first-child {
   padding-right: 25px;
   text-align: left;
   white-space: nowrap;
 }
-
-/* line 54, ../../sass/partials/_pagelayout.scss */
-.table td:nth-child(2) {
+/* line 64, ../../sass/partials/_pagelayout.scss */
+.discovery-result-results .table td:nth-child(2), .collectionlist .table td:nth-child(2) {
   padding-right: 25px;
   text-align: left;
-  width: 40%;
+  width: 50%;
+  font-weight: bold;
 }
 
 /* line 1, ../../sass/partials/_panels.scss */
 .panel, .panel-info {
   background-color: #F6F5F4;
+  border-color: rgba(181, 173, 166, 0.6);
 }
-/* line 3, ../../sass/partials/_panels.scss */
+/* line 4, ../../sass/partials/_panels.scss */
 .panel h2, .panel-info h2 {
   font-size: 1.3rem;
   margin: 0.5em 0 0 0;
   color: #7e6e5c;
 }
-/* line 8, ../../sass/partials/_panels.scss */
+/* line 9, ../../sass/partials/_panels.scss */
 .panel > .panel-heading, .panel-info > .panel-heading {
   color: #333;
   background-image: none;
@@ -95,13 +108,7 @@ footer.navbar {
   text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
 }
 
-/* line 22, ../../sass/partials/_panels.scss */
-.panel-infox {
-  border-color: rgba(181, 173, 166, 0.4);
-  background-color: rgba(181, 173, 166, 0.2);
-}
-
-/* line 27, ../../sass/partials/_panels.scss */
+/* line 23, ../../sass/partials/_panels.scss */
 .panel-primary {
   border-color: rgba(181, 173, 166, 0.4);
   border-radius: 0;
@@ -109,39 +116,39 @@ footer.navbar {
   background-color: rgba(181, 173, 166, 0.2);
 }
 
-/* line 34, ../../sass/partials/_panels.scss */
+/* line 30, ../../sass/partials/_panels.scss */
 .panel-simple-search {
   border-radius: 0;
   border: none;
   background-color: rgba(181, 173, 166, 0.4);
 }
-/* line 38, ../../sass/partials/_panels.scss */
+/* line 34, ../../sass/partials/_panels.scss */
 .panel-simple-search > .panel-heading {
   display: none;
 }
 
-/* line 43, ../../sass/partials/_panels.scss */
+/* line 39, ../../sass/partials/_panels.scss */
 .panel-footer {
   background-color: rgba(181, 173, 166, 0.3);
 }
 
-/* line 48, ../../sass/partials/_panels.scss */
+/* line 44, ../../sass/partials/_panels.scss */
 .panel-admin-tools form {
   margin-bottom: 5px;
 }
-/* line 51, ../../sass/partials/_panels.scss */
+/* line 47, ../../sass/partials/_panels.scss */
 .panel-admin-tools form:last-child {
   margin-bottom: 0px;
 }
 
-/* line 56, ../../sass/partials/_panels.scss */
+/* line 52, ../../sass/partials/_panels.scss */
 .well {
   background-image: none;
   background-color: rgba(181, 173, 166, 0.1);
   border-radius: 0;
 }
 
-/* line 62, ../../sass/partials/_panels.scss */
+/* line 58, ../../sass/partials/_panels.scss */
 .facetName {
   display: block;
   color: #A49483;
@@ -780,6 +787,17 @@ footer.navbar a:hover {
   padding: 0;
 }
 
+/* line 2, ../../sass/partials/_itempage.scss */
+.itemDisplayTable.table td:nth-child(1) {
+  padding-right: 25px;
+  white-space: nowrap;
+  text-align: right;
+}
+/* line 7, ../../sass/partials/_itempage.scss */
+.itemDisplayTable.table td:nth-child(2) {
+  width: auto;
+}
+
 /* line 1, ../../sass/partials/_admin.scss */
 .help-block {
   margin-top: 15px;
@@ -790,39 +808,34 @@ form.edit_metadata {
   max-width: 900px;
 }
 
-/* line 34, ../../sass/dspace-theme.scss */
+/* line 35, ../../sass/dspace-theme.scss */
 html {
   font-size: 100%;
 }
 
-/* line 38, ../../sass/dspace-theme.scss */
+/* line 39, ../../sass/dspace-theme.scss */
 #content {
   padding-bottom: 60px;
   margin-top: 20px;
 }
 
-/* line 43, ../../sass/dspace-theme.scss */
+/* line 44, ../../sass/dspace-theme.scss */
 a:link,
 a:visited {
   color: #0077a2;
 }
 
-/* line 48, ../../sass/dspace-theme.scss */
+/* line 49, ../../sass/dspace-theme.scss */
 .brand {
   font-size: 1rem;
   max-width: 44em;
 }
-/* line 51, ../../sass/dspace-theme.scss */
+/* line 52, ../../sass/dspace-theme.scss */
 .brand h4 {
   color: #A49483;
 }
 
-/* line 56, ../../sass/dspace-theme.scss */
-.col-md-9 > * {
-  max-width: 50rem;
-}
-
-/* line 61, ../../sass/dspace-theme.scss */
+/* line 59, ../../sass/dspace-theme.scss */
 .collections-list h3 {
   color: #4f453a;
   margin: 10px 0;

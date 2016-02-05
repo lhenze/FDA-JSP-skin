@@ -29,6 +29,7 @@ $cyan: #0077a2;
 @import "partials/_footer";
 @import "partials/_buttons";
 @import "partials/_facets";
+@import "partials/_itempage";
 @import "partials/_admin";
 
 html {
@@ -53,9 +54,6 @@ a:visited {
   }
 }
 
-.col-md-9 > * {
-  max-width: 50rem;
-}
 
 .collections-list {
   h3 {

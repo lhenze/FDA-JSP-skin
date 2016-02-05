@@ -17,22 +17,31 @@ footer.navbar {
 }
 
 /* end flexbox sticky footer */
+.col-md-9 > * {
+  max-width: 50rem;
+}
 
 .page-title-area, .search-area {
   max-width: 45rem;
 }
 
+body .search-area {
+  max-width: 35rem;
+}
+
 .page-title-area {
   padding-bottom: 3px;
+  width: auto;
+  overflow: auto;
   h2 {
     font-size: 2rem;
     margin-bottom: 5px;
     padding-bottom: 0;
   }
-}
-
-.collections-list {
-  margin-top: 30px;
+  .img-hold {
+    float: left;
+    margin-right: 20px;
+  }
 }
 
 .table thead > tr > th,
@@ -45,14 +54,18 @@ footer.navbar {
   text-align: left;
 }
 
-.table td:first-child {
-  padding-right: 25px;
-  text-align: left;
-  white-space: nowrap;
-}
-
-.table td:nth-child(2) {
-  padding-right: 25px;
-  text-align: left;
-  width: 40%;
+.discovery-result-results, .collectionlist {
+  .table {
+    td:first-child {
+      padding-right: 25px;
+      text-align: left;
+      white-space: nowrap;
+    }
+    td:nth-child(2) {
+      padding-right: 25px;
+      text-align: left;
+      width: 50%;
+      font-weight: bold;
+    }
+  }
 }
