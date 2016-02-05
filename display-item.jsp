@@ -187,11 +187,9 @@
 
     String displayStyle = (displayAll ? "full" : "");
 %>
-
     <dspace:item-preview item="<%= item %>" />
     <dspace:item item="<%= item %>" collections="<%= collections %>" style="<%= displayStyle %>" />
-    <div class="container row">
-        <!-- just after files in this item -->
+<div class="container row">
 <%
     String locationLink = request.getContextPath() + "/handle/" + handle;
 
