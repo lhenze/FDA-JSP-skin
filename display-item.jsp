@@ -132,6 +132,13 @@
 		<%
 		    }
 		%>
+
+        <div class="alert alert-warning citation-info">
+        <fmt:message key="jsp.display-item.identifier"/>
+            <code><%= HandleManager.getCanonicalForm(handle) %></code>
+        </div>
+
+
 		<!-- side bar --> 
 <%
         if (admin_button)  // admin edit button
