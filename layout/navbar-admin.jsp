@@ -56,10 +56,9 @@
          </button>
         <a class="navbar-brand" href="<%= request.getContextPath() %>"><img height="35" width="432" src="<%= request.getContextPath() %>/image/nyu_fda_logo.png" alt="FDA" /> </a> 
        </div>
-       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-         <ul class="nav navbar-nav">
-           <li><a href="<%= request.getContextPath() %>/"><span class="glyphicon glyphicon-home"></span> <fmt:message key="jsp.layout.navbar-default.home"/></a></li>
-           
+       <nav class="admin-navbar collapse navbar-collapse bs-navbar-collapse" role="navigation">
+         <ul class="nav navbar-nav admin-special-nav">
+         
           <li class="dropdown">
              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><fmt:message key="jsp.layout.navbar-admin.contents"/> <b class="caret"></b></a>
              <ul class="dropdown-menu">
