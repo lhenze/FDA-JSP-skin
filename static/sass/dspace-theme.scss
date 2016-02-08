@@ -5,18 +5,38 @@ Violet #57068C
 Taupe dark #A49483
 Taupe light B5ADA6   181, 173, 166
 link red #D11255   */
+
+/* from style guides */
+$teal: #008996;
+$darkGray: #4A4f55;
+$lightGray: #939A90;
+
 $violet: #57068C;
 $violet_bright: #8300D7;
 $violet_bright2: darken($violet_bright, 7%);
 $violet-dark: darken($violet, 8%);
 $taupe-dark: #A49483;
 $taupe-light: #B5ADA6;
-$link-red: #D11255;
+
+/* */
+//$taupe-dark: $darkGray;
+//$taupe-light: $lightGray;
+
+/*  */
+$nyu-red: #D11255;
+$nyu-red-light: tint($nyu-red, 20%);
 $taupe-header: darken($taupe-dark, 15%);
 $text-color2: darken($taupe-dark, 25%);
 $text-color: darken($taupe-dark, 31%);
 $taupe-super-light: #F6F5F4;
 $cyan: #0077a2;
+$green: #799A05;
+$green_light: tint($green, 10%);
+$cyan: $teal;
+$tertiary: $teal;
+$tertiary-light: tint($tertiary, 10%);
+
+@import "compass/css3/images";
 
 @import "partials/_pagelayout";
 @import "partials/_panels";
@@ -53,7 +73,6 @@ a:visited {
     color: $taupe-dark;
   }
 }
-
 
 .collections-list {
   h3 {
