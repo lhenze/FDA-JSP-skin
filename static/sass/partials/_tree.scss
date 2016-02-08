@@ -59,7 +59,7 @@
     text-align: left;
     margin-right: 0;
     width: 30px;
-    color: darken($link-red, 5%);
+    color: shade($nyu-red, 5%);
     // border: 1px solid transparent;
     &:hover, &:active, &:focus {
       text-decoration: none;
@@ -69,7 +69,7 @@
       // background-color: #EDE8E2;
       // background-color: lighten($taupe-light, 25%);
       // border: 1px solid #EDE8E2;
-      color: lighten($link-red, 15%);
+      color: tint($nyu-red, 15%);
     }
     &.isOpen {
       //border: 1px solid red;
