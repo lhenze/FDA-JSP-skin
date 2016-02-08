@@ -19,15 +19,15 @@
   .communityflag {
     // background-color: rgba($taupe-light, 0.2);
     display: inline-block;
-    margin-top: -15px;
-    margin-left: -15px;
+    // margin-top: -15px;
+    // margin-left: -15px;
     font-size: .8rem;
     //  color: $taupe-dark;
-    a:link, a:visited {
-      display: inline-block;
-      //  color: #A49483;
-      padding: 0 15px;
-    }
+    // a:link, a:visited {
+    //   display: inline-block;
+    //   //  color: #A49483;
+    //   // padding: 0 15px;
+    // }
     span {
       display: none;
     }
@@ -41,7 +41,7 @@
       color: #8A7D6E;
       color: $taupe-header;
       margin: 0;
-      font-size: 1.1rem;
+      font-size: 1rem;
       margin-bottom: .25rem;
     }
     &:first-child {

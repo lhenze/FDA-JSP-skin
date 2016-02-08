@@ -54,6 +54,12 @@ body .search-area {
   text-align: left;
 }
 
+.table.panel-body {
+  td:first-child, th:first-child {
+    padding-left: 15px;
+  }
+}
+
 .discovery-result-results, .collectionlist {
   .table {
     td:first-child {

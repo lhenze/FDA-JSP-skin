@@ -30,6 +30,7 @@
 <%@ page import="org.dspace.core.I18nUtil" %>
 <%@ page import="org.dspace.app.webui.util.UIUtil" %>
 <%@ page import="org.dspace.app.webui.components.RecentSubmissions" %>
+<%@ page import="org.dspace.app.webui.components.MostDownloaded" %>
 <%@ page import="org.dspace.content.Community" %>
 <%@ page import="org.dspace.content.Collection" %>
 <%@ page import="org.dspace.core.ConfigurationManager" %>
@@ -42,6 +43,10 @@
 <%@page import="org.apache.commons.lang.StringUtils"%>
 <%@ page import="java.io.IOException" %>
 <%@ page import="java.sql.SQLException" %>
+<%@ page import="java.net.URLEncoder" %>
+<%@ page import="org.dspace.authorize.AuthorizeManager" %>
+<%@ page import="org.dspace.authorize.ResourcePolicy" %>
+<%@ page import="org.dspace.core.Constants" %>
 <%
     Community[] communities = (Community[]) request.getAttribute("communities");
 
@@ -62,6 +67,7 @@
     ItemCounter ic = new ItemCounter(UIUtil.obtainContext(request));
 
     RecentSubmissions submissions = (RecentSubmissions) request.getAttribute("recent.submissions");
+    MostDownloaded mostdownloaded = ( MostDownloaded) request.getAttribute("most.downloaded");
 %>
 <%!
     void showCommunity(Community c, JspWriter out, HttpServletRequest request, ItemCounter ic, Map collectionMap, Map subcommunityMap) throws ItemCountException, IOException, SQLException
@@ -128,72 +134,60 @@ for (int i = 0; i < communities.length; i++)
 %>
                 </div>
             </div>
-            <div class="col-md-4">
-              <div class="panel panel-primary homepagesearch">
-                <div class="panel-heading">
-                  <h1>Most Popular Items</h1></div>
-                <div class="panel-body">
-                <div class="row">
+
 <%
-if (submissions != null && submissions.count() > 0)
+if (mostdownloaded != null && mostdownloaded.count() > 0)
 {
 %>
-        <div class="col-md-8">
-        <div class="panel panel-primary">        
-        <div id="recent-submissions-carousel" class="panel-heading carousel slide">
-          
-                  <!-- Wrapper for slides -->
-                  <div class="carousel-inner">
+       <div class="col-md-4">
+                     <div class="panel panel-primary homepage-sidebar">
+                       <div class="panel-heading"><h1>Most downloaded</h1></div>
+                       <div class="panel-body">
+
                     <%
-                    boolean first = true;
-                    for (Item item : submissions.getRecentSubmissions())
+
+                    for (Item item : mostdownloaded.getMostDownloaded())
                     {
+
+                      if(item.isPublic()) {
+                        Collection col=item.getCollections()[0];
                         Metadatum[] dcv = item.getMetadata("dc", "title", null, Item.ANY);
                         String displayTitle = "Untitled";
                         if (dcv != null & dcv.length > 0)
                         {
                             displayTitle = dcv[0].value;
                         }
-                        dcv = item.getMetadata("dc", "description", "abstract", Item.ANY);
-                        String displayAbstract = "";
-                        if (dcv != null & dcv.length > 0)
-                        {
-                            displayAbstract = dcv[0].value;
-                        }
+                        dcv = item.getMetadata("dc", "contributor", "author", Item.ANY);
+                        Metadatum[] authors =dcv;
+
                 %>
-                    <div style="padding-bottom: 10px; min-height: 200px;" class="item <%= first?"active":""%>">
-                      <div style="padding-left: 10px; padding-right: 10px; display: inline-block;"><%= displayTitle  %> 
-                        <a href="<%= request.getContextPath() %>/handle/<%=item.getHandle() %>" class="btn btn-success">See</a>
-                        <p><%= displayAbstract %></p>
-                      </div>
-                    </div>
+                    <article >
+                    <div class="communityflag"><span>Collection:</span>
+                        <a href="<%= request.getContextPath() %>/handle/<%=col.getHandle() %>" ><%= col.getName()  %></a></div>
+                        <h1><a href="<%= request.getContextPath() %>/handle/<%=item.getHandle() %>"><%= displayTitle %></a></h1>
+                        <% if (dcv!=null&&dcv.length>0)
+                            {
+                             for(int i=0;i<authors.length;i++)
+                             {
+                               String authorQuery=""+request.getContextPath()+"/simple-search?filterquery="
+                                             +URLEncoder.encode(authors[i].value,"UTF-8")
+                                             + "&amp;filtername="+URLEncoder.encode("author","UTF-8")+"&amp;filtertype="
+                                             +URLEncoder.encode("equals","UTF-8");
+                        %>
+                        	   <div class="authors">
+                        		 <a class="authors" href="<%=authorQuery %>"> <%= StringUtils.abbreviate(authors[i].value,36) %></a>
+                        	   </div>
+                           <% }
+                           } %>
+                   </article>
                   <%
-                                first = false;
-                     }
-                %>
-                  </div>
-                  <!-- Controls -->
-                  <a class="left carousel-control" href="#recent-submissions-carousel" data-slide="prev">
-                    <span class="icon-prev"></span>
-                  </a>
-                  <a class="right carousel-control" href="#recent-submissions-carousel" data-slide="next">
-                    <span class="icon-next"></span>
-                  </a>
+                   }
+                  }
 
-          <ol class="carousel-indicators">
-                    <li data-target="#recent-submissions-carousel" data-slide-to="0" class="active"></li>
-                    <% for (int i = 1; i < submissions.count(); i++){ %>
-                    <li data-target="#recent-submissions-carousel" data-slide-to="<%= i %>"></li>
-                    <% } %>
-              </ol>
-     </div></div></div>
-<%
-}
-%>
-
-                </div>
-              </div>
+%>     </div>
+        </div>
             </div> <!-- end col 4 -->
           </div> <!-- end col row  -->
+<% } %>
      
 </dspace:layout>

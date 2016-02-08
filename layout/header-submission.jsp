@@ -144,7 +144,7 @@
 %>
 </header>
 
-<main id="content" role="main">
+<main id="content" >
                 <%-- Location bar --%>
 <%
     if (locbar)

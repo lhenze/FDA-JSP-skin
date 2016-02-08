@@ -2,7 +2,8 @@
   &.table td:nth-child(1) {
     padding-right: 25px;
     white-space: nowrap;
-    text-align: right;
+    text-align: left;
+    width: 200px;
   }
   &.table td:nth-child(2) {
     // min-width: 50%;

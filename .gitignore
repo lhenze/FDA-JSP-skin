@@ -2,3 +2,7 @@
 *.scssc
 
 *.class
+
+WEB-INF/*
+
+META-INF/maven/org.dspace.modules/jspui/pom.properties
