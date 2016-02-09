@@ -1,32 +1,21 @@
 .btn-default:hover, .btn-default:focus {
   background-color: #ebebeb;
-  background-image: -webkit-gradient(linear, left 0, left 100%, from(#e6e6e6), to(#ffffff));
-  background-image: -webkit-linear-gradient(top, #e6e6e6, 0%, #ffffff, 100%);
-  background-image: -moz-linear-gradient(top, #e6e6e6 0, #ffffff 100%);
-  background-image: linear-gradient(to bottom, #e6e6e6 0, #ffffff 100%);
+  @include background-image(linear-gradient(#e6e6e6, #ffffff));
   background-repeat: repeat-x;
-  border-color: #e0e0e0;
   border-color: #adadad;
 }
 
 .btn-primary {
   color: #fff;
   background-color: $taupe-dark;
-  background-image: -webkit-gradient(linear, left 0, left 100%, from($taupe-dark), to(#8A7D6E));
-  background-image: -webkit-linear-gradient(top, $taupe-dark, 0%, #8A7D6E, 100%);
-  background-image: -moz-linear-gradient(top, $taupe-dark 0, #8A7D6E 100%);
-  background-image: linear-gradient(to bottom, $taupe-dark 0, #8A7D6E 100%);
+  @include background-image(linear-gradient($taupe-dark, #8A7D6E));
   background-repeat: repeat-x;
   border-color: #8A7D6E;
   &[disabled] {
     border-color: #8A7D6E;
   }
   &:hover, &:focus {
-    background-image: -webkit-gradient(linear, left 0, left 100%, from(#8A7D6E), to($taupe-dark));
-    background-image: -webkit-linear-gradient(top, #8A7D6E, 0%, $taupe-dark, 100%);
-    background-image: -moz-linear-gradient(top, #8A7D6E 0, $taupe-dark 100%);
-    background-image: linear-gradient(to bottom, #8A7D6E 0, $taupe-dark 100%);
-    background-repeat: repeat-x;
+    @include background-image(linear-gradient(#8A7D6E, $taupe-dark));
     border-color: #8A7D6E;
   }
   &:active {
@@ -49,22 +38,13 @@ a.btn-primary {
 
 .btn-info {
   color: #fff;
-  background-image: -webkit-gradient(linear, left 0, left 100%, from($tertiary-light), to($tertiary));
-  background-image: -webkit-linear-gradient(top, $tertiary-light, 0%, $tertiary, 100%);
-  background-image: -moz-linear-gradient(top, $tertiary-light 0, $tertiary 100%);
-  background-image: linear-gradient(to bottom, $tertiary-light 0, $tertiary 100%);
+  @include background-image(linear-gradient($tertiary-light, $tertiary));
   background-repeat: repeat-x;
   border-color: shade($tertiary, 4%);
   &:hover, &:focus {
     color: #fff;
-    background-image: -webkit-gradient(linear, left 0, left 100%, from($tertiary), to($tertiary-light));
-    background-image: -webkit-linear-gradient(top, $tertiary, 0%, $tertiary-light, 100%);
-    background-image: -moz-linear-gradient(top, $tertiary 0, $tertiary-light 100%);
-    background-image: linear-gradient(to bottom, $tertiary 0, $tertiary-light 100%);
-    background-repeat: repeat-x;
+    @include background-image(linear-gradient($tertiary, $tertiary-light));
     border-color: shade($tertiary, 14%);
-    //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de',endColorstr='#ff31b0d5',GradientType=0);
- 
   }
 }
 
