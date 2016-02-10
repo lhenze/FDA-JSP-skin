@@ -132,15 +132,25 @@
 
         });
       }
-
-
     });
+
+
+    
+		jQ("#sort_by").change(function(){
+       jQ(this).closest('form').trigger('submit');
+    });
+    jQ("#rpp_select").change(function(){
+       jQ(this).closest('form').trigger('submit');
+		});
 
 
 		jQ( "#spellCheckQuery").click(function(){
 			jQ("#query").val(jQ(this).attr('data-spell'));
 			jQ("#main-query-submit").click();
 		});
+
+		
+
 		jQ( "#filterquery" )
 			.autocomplete({
 				source: function( request, response ) {
@@ -182,7 +192,7 @@
 
     <%-- <h1>Search Results</h1> --%>
 
-<h2 class="search-page-title"><fmt:message key="jsp.search.title"/></h2>
+<%-- <h2 class="search-page-title"><fmt:message key="jsp.search.title"/></h2> --%>
 
 
 
@@ -439,7 +449,7 @@ else if( qResults != null)
  <div class="discovery-pagination-controls">
 
 
-   <form action="simple-search" method="get">
+   <form action="simple-search" method="get" id="results-sorting">
    <input type="hidden" value="<%= StringEscapeUtils.escapeHtml(searchScope) %>" name="location" />
    <input type="hidden" value="<%= StringEscapeUtils.escapeHtml(query) %>" name="query" />
 	<% if (appliedFilterQueries.size() > 0 ) { 
@@ -456,7 +466,7 @@ else if( qResults != null)
 				}
 	} %>	
           
-           <select name="rpp" class="form-control">
+           <select name="rpp" class="form-control" id="rpp_select">
 <%
                for (int i = 5; i <= 100 ; i += 5)
                {
@@ -475,7 +485,7 @@ else if( qResults != null)
 %>
             <!--   <label for="sort_by"><fmt:message key="search.results.sort-by"/></label> -->
             sorted by
-               <select name="sort_by" class="form-control">
+               <select name="sort_by" id="sort_by" class="form-control">
                   <option value="score"><fmt:message key="search.sort-by.relevance"/></option>
                 	<option value="dc.title_sort">Title A-Z</option>
                 	<option value="dc.title_sort">Title Z-A</option>
@@ -493,11 +503,11 @@ else if( qResults != null)
 <%
            }
 
-        
+
 %>
           <input type="hidden" value="ASC">
        
-           <input class="btn btn-default" type="submit" name="submit_search" value="<fmt:message key="search.update" />" />
+           <input style="display:none" class="btn btn-default" type="submit" name="submit_search" value="<fmt:message key="search.update" />" />
 
 <%
     if (admin_button)

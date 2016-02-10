@@ -58,12 +58,17 @@
 }
 
 .simplest-search {
-  .form-group-flex .input-hold {
+  .input-hold {
     display: block;
     -webkit-flex: 1 1 auto;
     flex: 1 1 auto;
+    input#query {
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+      border-right: none;
+    }
   }
-  .form-group-flex .input-hold input {
+  .input-hold input {
     width: 100%;
     padding: 6px 12px;
     font-size: 17px;
@@ -72,7 +77,7 @@
     border-right: none;
     height: 40px;
   }
-  .form-group-flex .button-hold {
+  .button-hold {
     min-width: 15%;
     display: block;
     -webkit-flex: 0 0 auto;
@@ -82,7 +87,7 @@
     background-color: $taupe-dark;
     @include background-image(linear-gradient($taupe-dark, #8A7D6E));
   }
-  .form-group-flex .button-hold button {
+  .button-hold button {
     width: 100%;
     background: transparent;
     border: transparent;
@@ -210,9 +215,6 @@ input#query {
   width: 100%;
   padding: 6px 12px;
   font-size: 17px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border-right: none;
 }
 
 .discovery-pagination-controls {
