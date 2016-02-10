@@ -2,7 +2,7 @@
   a {
     padding: 10px 15px;
     &:link, &:visited {
-      color: $text-color;
+      color: shade($taupe-dark, 5%);
       display: block;
     }
     &:hover {
@@ -13,6 +13,9 @@
       display: block;
       text-align: right;
     }
+  }
+  .list-group-item {
+    font-size: .75rem;
   }
   li {
     padding: 0;
