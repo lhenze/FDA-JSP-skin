@@ -668,37 +668,37 @@ ol.breadcrumb li a:hover {
 }
 
 /* line 9, ../../sass/partials/_mostdownloaded.scss */
-.homepage-sidebar {
-  margin-top: 30px;
+.most-downloaded {
+  margin-top: 20px;
 }
 /* line 11, ../../sass/partials/_mostdownloaded.scss */
-.homepage-sidebar .panel-heading h1 {
+.most-downloaded .panel-heading h1 {
   text-transform: uppercase;
   font-size: .9rem;
   margin: 0;
   color: #7e6e5c;
 }
 /* line 17, ../../sass/partials/_mostdownloaded.scss */
-.homepage-sidebar .authors {
+.most-downloaded .authors {
   line-height: 1.25;
 }
 /* line 20, ../../sass/partials/_mostdownloaded.scss */
-.homepage-sidebar .communityflag {
+.most-downloaded .communityflag {
   display: inline-block;
   font-size: .8rem;
 }
 /* line 32, ../../sass/partials/_mostdownloaded.scss */
-.homepage-sidebar .communityflag span {
+.most-downloaded .communityflag span {
   display: none;
 }
 /* line 36, ../../sass/partials/_mostdownloaded.scss */
-.homepage-sidebar article {
+.most-downloaded article {
   padding: 10px 0;
   border-bottom: 1px solid #d8d3d0;
   box-shadow: 0px 1px 1px 0px white;
 }
 /* line 41, ../../sass/partials/_mostdownloaded.scss */
-.homepage-sidebar article h1 {
+.most-downloaded article h1 {
   color: #8A7D6E;
   color: #7e6e5c;
   margin: 0;
@@ -706,16 +706,16 @@ ol.breadcrumb li a:hover {
   margin-bottom: .25rem;
 }
 /* line 48, ../../sass/partials/_mostdownloaded.scss */
-.homepage-sidebar article:first-child {
+.most-downloaded article:first-child {
   padding-top: 0;
 }
 /* line 51, ../../sass/partials/_mostdownloaded.scss */
-.homepage-sidebar article:last-child {
+.most-downloaded article:last-child {
   border-bottom: none;
   box-shadow: none;
 }
 /* line 56, ../../sass/partials/_mostdownloaded.scss */
-.homepage-sidebar a:link, .homepage-sidebar a:visited {
+.most-downloaded a:link, .most-downloaded a:visited {
   color: #4f453a;
 }
 
