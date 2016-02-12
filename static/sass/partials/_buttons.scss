@@ -1,8 +1,15 @@
+.btn-default {
+  background-color: #eee;
+  @include background-image(linear-gradient($taupe-super-light, tint($taupe-light, 60%)));
+  background-repeat: repeat-x;
+  border-color: tint($taupe-light, 50%);
+}
+
 .btn-default:hover, .btn-default:focus {
   background-color: #ebebeb;
-  @include background-image(linear-gradient(#e6e6e6, #ffffff));
+  @include background-image(linear-gradient(tint($taupe-light, 60%), $taupe-super-light));
   background-repeat: repeat-x;
-  border-color: #adadad;
+  border-color: tint($taupe-light, 30%);
 }
 
 .btn-primary {
@@ -37,7 +44,7 @@ a.btn-primary {
 }
 
 .btn-info {
-  color: #fff;
+  color: #fff !important;
   @include background-image(linear-gradient($tertiary-light, $tertiary));
   background-repeat: repeat-x;
   border-color: shade($tertiary, 4%);
