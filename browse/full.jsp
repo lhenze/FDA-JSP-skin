@@ -218,8 +218,10 @@
 	Set<SortOption> sortOptions = SortOption.getSortOptions();
 	if (sortOptions.size() > 1) // && bi.getBrowseLevel() > 0
 	{
-%>
-		<label for="sort_by"><fmt:message key="browse.full.sort-by"/></label>
+
+
+
+		%>
 		<select name="sort_by">
 <%
 		for (SortOption sortBy : sortOptions)
@@ -236,13 +238,13 @@
 <%
 	}
 %>
-		<label for="order"><fmt:message key="browse.full.order"/></label>
+	
 		<select name="order">
 			<option value="ASC" <%= ascSelected %>><fmt:message key="browse.order.asc" /></option>
 			<option value="DESC" <%= descSelected %>><fmt:message key="browse.order.desc" /></option>
 		</select>
 
-		<label for="rpp"><fmt:message key="browse.full.rpp"/></label>
+	
 		<select name="rpp">
 <%
 	for (int i = 5; i <= 100 ; i += 5)
