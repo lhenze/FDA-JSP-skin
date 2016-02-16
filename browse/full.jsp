@@ -350,5 +350,19 @@
 	<%-- 
 	<!-- <%= bi.toString() %> -->
 	--%>
+<script type="text/javascript">
+	var jQ = jQuery.noConflict();
+	jQ(document).ready(function() {
+			Q("#sort_by").change(function(){
+				var direction = jQ(this).find("option:selected").attr('data-order');
+				var hiddenfield = jQ(this).closest('form').find('input[name=order]');
+				hiddenfield.val(direction);
+				jQ(this).closest('form').trigger('submit');
+			});
+    	jQ("#rpp_select").change(function(){
+       	jQ(this).closest('form').trigger('submit');
+			});
+	});
+</script>		
 
 </dspace:layout>
