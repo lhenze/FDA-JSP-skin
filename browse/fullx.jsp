@@ -28,6 +28,7 @@
 <%@ page import="org.dspace.app.webui.util.UIUtil" %>
 
 <%
+
     request.setAttribute("LanguageSwitch", "hide");
 
     String urlFragment = "browse";
@@ -94,6 +95,7 @@
 	}
 	
 	String direction = (bi.isAscending() ? "ASC" : "DESC");
+	String order = direction;
 	
 	String argument = null;
 	if (bi.hasAuthority())
@@ -126,7 +128,7 @@
 	
 	String next = sharedLink;
 	String prev = sharedLink;
-	
+
 	if (bi.hasNextPage())
     {
         next = next + "&amp;offset=" + bi.getNextOffset();
@@ -151,8 +153,25 @@
 	
 	// prepare the known information about sorting, ordering and results per page
 	String sortedBy = so.getName();
+
+
+
+
 	String ascSelected = (bi.isAscending() ? "selected=\"selected\"" : "");
 	String descSelected = (bi.isAscending() ? "" : "selected=\"selected\"");
+
+	//	String titleAscSelected = ((sortedBy.equalsIgnoreCase("dc.title_sort") && (order.equalsIgnoreCase("ASC"))) ? "selected=\"selected\"" : "1");
+  //  String titleDescSelected = ((sortedBy.equalsIgnoreCase("dc.title_sort") && (order.equalsIgnoreCase("DESC")))  ? "selected=\"selected\"" : "2");
+  //  String dateIAscSelected = ((sortedBy.equalsIgnoreCase("dc.date.issued_dt") && (order.equalsIgnoreCase("ASC"))) ? "selected=\"selected\"" : "33");
+   // String dateIDescSelected = ((sortedBy.equalsIgnoreCase("dc.date.issued_dt") && (order.equalsIgnoreCase("DESC"))) ? "selected=\"selected\"" : "4");
+
+
+		String titleAscSelected = ((order.equalsIgnoreCase("ASC"))) ? "selected=\"selected\"" : "1c");
+    String titleDescSelected = ( (order.equalsIgnoreCase("DESC")))  ? "selected=\"selected\"" : "2c");
+    String dateIAscSelected = ((order.equalsIgnoreCase("ASC"))) ? "selected=\"selected\"" : "33c");
+    String dateIDescSelected = ( (order.equalsIgnoreCase("DESC"))) ? "selected=\"selected\"" : "4c");
+
+
 	int rpp = bi.getResultsPerPage();
 	
 	// the message key for the type
@@ -176,7 +195,7 @@
 <dspace:layout locbar="Link" titlekey="browse.page-title" navbar="<%=layoutNavbar %>">
 
 	<%-- Build the header (careful use of spacing) --%>
-	<h2>
+	<h2>order <%=order%> query <%=query%> 
 		<fmt:message key="browse.full.header"><fmt:param value="<%= scope %>"/></fmt:message> <fmt:message key="<%= typeKey %>"/> <%= value %>
 	</h2>
 
@@ -222,30 +241,26 @@
 
 
 		%>
-		<select name="sort_by">
-<%
-		for (SortOption sortBy : sortOptions)
-		{
-            if (sortBy.isVisible())
-            {
-                String selected = (sortBy.getName().equals(sortedBy) ? "selected=\"selected\"" : "");
-                String mKey = "browse.sort-by." + sortBy.getName();
-                %> <option value="<%= sortBy.getNumber() %>" <%= selected %>><fmt:message key="<%= mKey %>"/></option><%
-            }
-        }
-%>
+
+
+
+		<select name="sort_by" id="sort_by" class="form-control">
+			<option data-order="ASC" value="dc.title_sort" <%= titleAscSelected %>>Title A-Z</option>
+			<option data-order="DESC" value="dc.title_sort" <%= titleDescSelected %>>Title Z-A</option>
+			<option data-order="DESC" value="dc.date.issued_dt" <%=dateIDescSelected%>  >Newest</option>
+			<option data-order="ASC" value="dc.date.issued_dt" <%=dateIAscSelected%>>Oldest</option>
 		</select>
+
+		<input type="hidden" value="<%= order %>" name="order" />
+
 <%
 	}
 %>
 	
-		<select name="order">
-			<option value="ASC" <%= ascSelected %>><fmt:message key="browse.order.asc" /></option>
-			<option value="DESC" <%= descSelected %>><fmt:message key="browse.order.desc" /></option>
-		</select>
+
 
 	
-		<select name="rpp">
+		<select name="rpp" class="form-control">
 <%
 	for (int i = 5; i <= 100 ; i += 5)
 	{
