@@ -15,7 +15,14 @@
     }
   }
   .list-group-item {
-    font-size: .75rem;
+    font-size: .8rem;
+  }
+  .list-group-nextlink {
+    a {
+      &:hover {
+        background-color: inherit;
+      }
+    }
   }
   li {
     padding: 0;

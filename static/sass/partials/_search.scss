@@ -24,6 +24,11 @@
   }
 }
 
+form#results-pp {
+  float: left;
+  margin-top: 20px;
+}
+
 .form-control:focus, .btn:focus, *:focus {
   border-color: $teal !important;
   outline: 0;
@@ -44,7 +49,7 @@
 }
 
 .discovery-result-results {
-  margin: 1rem 0;
+  margin: 12px 0;
   border-top: 4px double tint($taupe-light, 40%);
   border-bottom: 4px double tint($taupe-light, 40%);
 }
