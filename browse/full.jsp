@@ -186,7 +186,7 @@
 	<%-- End of Navigation Headers --%>
 
 	<%-- Include a component for modifying sort by, order, results per page, and et-al limit --%>
-	<div id="browse_controls">
+	<div id="browse_controls" class="discovery-pagination-controls">
 	<form method="get" action="<%= formaction %>">
 		<input type="hidden" name="type" value="<%= bix.getName() %>"/>
 <%
@@ -222,30 +222,23 @@
 
 
 		%>
-		<select name="sort_by">
-<%
-		for (SortOption sortBy : sortOptions)
-		{
-            if (sortBy.isVisible())
-            {
-                String selected = (sortBy.getName().equals(sortedBy) ? "selected=\"selected\"" : "");
-                String mKey = "browse.sort-by." + sortBy.getName();
-                %> <option value="<%= sortBy.getNumber() %>" <%= selected %>><fmt:message key="<%= mKey %>"/></option><%
-            }
-        }
-%>
+	
+
+		<select name="sort_by" id="sort_by" class="form-control">
+ 				<option value="1" data-order="ASC">Title A-Z</option>
+ 				<option value="1" data-order="DESC">Title Z-A</option>
+ 				<option value="2" data-order="DESC">Issue date newest</option>
+ 				<option value="2" data-order="ASC">Issue date oldest</option>
+ 				<option value="3" data-order="DESC">submit date newest</option>
+ 				<option value="3" data-order="ASC">submit date oldest</option>
 		</select>
+
+		<input type="hidden" value="<%= direction %>" name="order" />
 <%
 	}
 %>
 	
-		<select name="order">
-			<option value="ASC" <%= ascSelected %>><fmt:message key="browse.order.asc" /></option>
-			<option value="DESC" <%= descSelected %>><fmt:message key="browse.order.desc" /></option>
-		</select>
-
-	
-		<select name="rpp">
+	<select name="rpp" id="rpp_select" class="form-control">
 <%
 	for (int i = 5; i <= 100 ; i += 5)
 	{
@@ -255,11 +248,10 @@
 <%
 	}
 %>
-		</select>
+	</select>
 
 
-
-		<input type="submit" class="btn btn-default" name="submit_browse" value="<fmt:message key="jsp.general.update"/>"/>
+	<input type="submit" style="display:none" class="btn btn-default" name="submit_browse" value="<fmt:message key="jsp.general.update"/>"/>
 
 <%
     if (admin_button && !withdrawn && !privateitems)
@@ -270,9 +262,9 @@
 
 	</form>
 	</div>
-<div class="panel panel-primary browsing-by">
+<div class="panelx panel-primaryx browsing-by">
 	<%-- give us the top report on what we are looking at --%>
-	<div class="panel-heading ">
+	<div class="panel-headingx ">
 		<fmt:message key="browse.full.range">
 			<fmt:param value="<%= Integer.toString(bi.getStart()) %>"/>
 			<fmt:param value="<%= Integer.toString(bi.getFinish()) %>"/>
