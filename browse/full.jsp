@@ -153,6 +153,15 @@
 	String sortedBy = so.getName();
 	String ascSelected = (bi.isAscending() ? "selected=\"selected\"" : "");
 	String descSelected = (bi.isAscending() ? "" : "selected=\"selected\"");
+	String theNum = Integer.toString(so.getNumber());
+	String titleAscSelected = 	((direction.equalsIgnoreCase("ASC") && theNum.equals("1")) ? "selected=\"selected\"" : "");
+  String titleDescSelected = 	((direction.equalsIgnoreCase("DESC") && theNum.equals("1"))  ? "selected=\"selected\"" : "");
+ 	String dateIAscSelected = 	((direction.equalsIgnoreCase("ASC") && theNum.equals("2")) ? "selected=\"selected\"" : "");
+  String dateIDescSelected = 	((direction.equalsIgnoreCase("DESC") && theNum.equals("2")) ? "selected=\"selected\"" : "");
+  String dateSAscSelected = 	((direction.equalsIgnoreCase("ASC") && theNum.equals("3")) ? "selected=\"selected\"" : "");
+  String dateSDescSelected = 	((direction.equalsIgnoreCase("DESC") && theNum.equals("3")) ? "selected=\"selected\"" : "");
+
+
 	int rpp = bi.getResultsPerPage();
 	
 	// the message key for the type
@@ -225,12 +234,12 @@
 	
 
 		<select name="sort_by" id="sort_by" class="form-control">
- 				<option value="1" data-order="ASC">Title A-Z</option>
- 				<option value="1" data-order="DESC">Title Z-A</option>
- 				<option value="2" data-order="DESC">Issue date newest</option>
- 				<option value="2" data-order="ASC">Issue date oldest</option>
- 				<option value="3" data-order="DESC">submit date newest</option>
- 				<option value="3" data-order="ASC">submit date oldest</option>
+ 				<option value="1" data-order="ASC"  <%= titleAscSelected %>>Title A-Z</option>
+ 				<option value="1" data-order="DESC" <%= titleDescSelected %>>Title Z-A</option>
+ 				<option value="2" data-order="DESC" <%= dateIDescSelected %>>Issue date newest</option>
+ 				<option value="2" data-order="ASC" 	<%= dateIAscSelected %>>Issue date oldest</option>
+ 				<option value="3" data-order="DESC" <%= dateSDescSelected %>>Submit date newest</option>
+ 				<option value="3" data-order="ASC" 	<%= dateSAscSelected %>>Submit date oldest</option>
 		</select>
 
 		<input type="hidden" value="<%= direction %>" name="order" />
