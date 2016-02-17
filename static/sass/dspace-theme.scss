@@ -35,6 +35,7 @@ $tertiary-light: tint($tertiary, 10%);
 @import "partials/_pagelayout";
 @import "partials/_panels";
 @import "partials/_search";
+@import "partials/_browse";
 @import "partials/_tree";
 @import "partials/_collectionpage";
 @import "partials/_topnavbar";
@@ -66,6 +67,11 @@ a:visited {
   h4 {
     color: $taupe-dark;
   }
+}
+
+h2, .h2 {
+  font-weight: normal;
+  font-weight: 300;
 }
 
 .collections-list {
