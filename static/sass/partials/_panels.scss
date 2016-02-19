@@ -1,23 +1,28 @@
 .panel, .panel-info {
   background-color: $taupe-super-light;
-  border-color: rgba($taupe-light, 0.1);
+  //border-color: rgba($taupe-light, 0.1);
   h2 {
     font-size: 1.3rem;
     margin: 0.5em 0 0 0;
     color: $taupe-header;
   }
   > .panel-heading {
-    color: #333;
     background-image: none;
     background-color: rgba($taupe-light, 0.4);
     // border: none;
-    border-color: rgba($taupe-light, 0.5);
+    border: 1px solid rgba($taupe-light, 0.2);
     text-transform: uppercase;
     font-size: .9rem;
     color: $taupe-header;
     font-weight: 500;
     text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
   }
+}
+
+.panel-body {
+  border-left: 1px solid rgba($taupe-light, 0.2);
+  border-right: 1px solid rgba($taupe-light, 0.2);
+  border-bottom: 1px solid rgba($taupe-light, 0.2);
 }
 
 .panel-primary {
@@ -53,17 +58,6 @@
   background-image: none;
   background-color: rgba($taupe-light, 0.1);
   border-radius: 0;
-}
-
-.facetName {
-  display: block;
-  color: $taupe-dark;
-  text-transform: uppercase;
-  font-size: .85rem;
-  // color: $taupe-header;
-  font-weight: 500;
-  padding: 0 0 3px 5px;
-  text-shadow: 1px 1px 1px white;
 }
 
 // @media (max-width: 991px) {
