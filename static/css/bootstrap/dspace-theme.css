@@ -478,6 +478,46 @@ input#query {
 .browse-list-list th {
   padding-top: 20px !important;
 }
+/* line 45, ../../sass/partials/_browse.scss */
+.browse-list-list th#t1 strong {
+  font-weight: bold;
+}
+/* line 49, ../../sass/partials/_browse.scss */
+.browse-list-list td[headers="t1"] strong {
+  background-color: red;
+  font-weight: normal;
+}
+
+/*    */
+/* line 58, ../../sass/partials/_browse.scss */
+.taxonomy-browse ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: flex-start;
+  justify-content: flex-start;
+}
+/* line 63, ../../sass/partials/_browse.scss */
+.taxonomy-browse ul li {
+  flex: 1 1 50%;
+  min-width: 400px;
+  display: block;
+  margin-bottom: -1px;
+  margin-right: -1px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+/* line 72, ../../sass/partials/_browse.scss */
+.taxonomy-browse ul li a:link {
+  font-size: 1rem;
+  display: block;
+}
+/* line 80, ../../sass/partials/_browse.scss */
+.taxonomy-browse ul li a .badge {
+  margin-left: 15px;
+  margin-top: 2px;
+  float: none;
+  vertical-align: top;
+}
 
 /* line 1, ../../sass/partials/_tree.scss */
 .collections-list h3 {
