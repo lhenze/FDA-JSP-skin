@@ -168,11 +168,11 @@
 				String bi_name_key = "browse.menu." + bi.getSortOption().getName();
 				String so_name_key = "browse.order." + (bi.isAscending() ? "asc" : "desc");
 %>
-
+<div class="discovery-results-header">
 		<%-- give us the top report on what we are looking at --%>
 		<fmt:message var="bi_name" key="<%= bi_name_key %>"/>
 		<fmt:message var="so_name" key="<%= so_name_key %>"/>
-		<div class="browse_range">
+		<div class="browse_range resultsnum"> 
 				<fmt:message key="jsp.collection-home.content.range">
 						<fmt:param value="${bi_name}"/>
 						<fmt:param value="${so_name}"/>
@@ -181,8 +181,15 @@
 						<fmt:param value="<%= Integer.toString(bi.getTotal()) %>"/>
 				</fmt:message>
 		</div>
-
-
+		<div class="discovery-pagination-controls">
+			
+			<%= bi_name_key %>
+			<form action="simple-search" method="get" id="results-sorting">
+					  <input type="hidden" value="" name="location" />
+   					<input type="hidden" value="" name="query" />
+   		</form>
+ 		</div>
+</div>
 
 <%-- output the results using the browselist tag --%>
 		 <dspace:browselist browseInfo="<%= bi %>" emphcolumn="<%= bi.getSortOption().getMetadata() %>" />
@@ -273,8 +280,8 @@
 												<%
 												 }
 												}
-
-			%>     </div>
+			%>     
+		</div>
 							</div>
 
 					<%} %>
@@ -283,11 +290,11 @@
 
 
 <% if(admin_button || editor_button ) { %>
-								 <div class="panel panel-admin-tools">
-								 <div class="panel-heading"><fmt:message key="jsp.admintools"/>
-									<span class="pull-right"><dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.collection-admin\")%>"><fmt:message key="jsp.adminhelp"/></dspace:popup></span>
-								 </div>
-								 <div class="panel-body">              
+			<div class="panel panel-admin-tools">
+					<div class="panel-heading"><fmt:message key="jsp.admintools"/>
+							<span class="pull-right"><dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.collection-admin\")%>"><fmt:message key="jsp.adminhelp"/></dspace:popup></span>
+					</div>
+					<div class="panel-body">              
 <% if( editor_button ) { %>
 								<form method="post" action="<%=request.getContextPath()%>/tools/edit-communities">
 									<input type="hidden" name="collection_id" value="<%= collection.getID() %>" />
@@ -298,10 +305,11 @@
 <% } %>
 
 <% if( admin_button ) { %>
-								 <form method="post" action="<%=request.getContextPath()%>/tools/itemmap">
-									<input type="hidden" name="cid" value="<%= collection.getID() %>" />
-					<input class="btn btn-default col-md-12" type="submit" value="<fmt:message key="jsp.collection-home.item.button"/>" />                  
-								</form>
+					<form method="post" action="<%=request.getContextPath()%>/tools/itemmap">
+						<input type="hidden" name="cid" value="<%= collection.getID() %>" />
+						<input class="btn btn-default col-md-12" type="submit" value="<fmt:message key="jsp.collection-home.item.button"/>" />                  
+					</form>
+<% } %>
 <% if(submitters != null) { %>
 					<form method="get" action="<%=request.getContextPath()%>/tools/group-edit">
 						<input type="hidden" name="group_id" value="<%=submitters.getID()%>" />
@@ -323,19 +331,19 @@
 								 <input type="hidden" name="handle" value="<%= collection.getHandle() %>" />
 								 <input class="btn btn-default col-md-12" type="submit" value="<fmt:message key="jsp.general.metadataexport.button"/>" />
 							 </form>
-							 </div>
-							 </div>
+							
 <% } %>
-								 
+	</div>
+	</div>			 <!-- done panel body and panel admin tools --> 
 <% } %>
-
-<%  } %>
 
 <%
 	if (rs != null)
 	{
 %>
-	<h3><fmt:message key="jsp.collection-home.recentsub"/></h3>
+<div class = "panel panel-default">
+	<div class = "panel-heading"><h3><fmt:message key="jsp.collection-home.recentsub"/></h3></div>
+	<div class = "panel-body">
 <%
 		Item[] items = rs.getRecentSubmissions();
 		for (int i = 0; i < items.length; i++)
@@ -352,7 +360,9 @@
 			%><p class="recentItem"><a href="<%= request.getContextPath() %>/handle/<%= items[i].getHandle() %>"><%= displayTitle %></a></p><%
 		}
 %>
-		<p>&nbsp;</p>
+	
+	</div></div>
+		
 <%      } %>
 
 		<%= sidebar %>
@@ -360,18 +370,17 @@
 			int discovery_panel_cols = 12;
 			int discovery_facet_cols = 12;
 		%>
+
+
 		<%@ include file="discovery/static-sidebar-facet.jsp" %>
 
 
 
-
-
-
 <div class = "panel panel-default ">
-		<div class = "panel-heading">Email subscription</div>
-	<div class = "panel-body">
+		<div class = "panel-heading">Email subscription </div>
+		<div class = "panel-body">
 
-				<form  method="get" action="">
+		<form  method="get" action="">
 <%  if (loggedIn && subscribed)
 		{ %>
 								<small><fmt:message key="jsp.collection-home.subscribed"/> <a href="<%= request.getContextPath() %>/subscribe"><fmt:message key="jsp.collection-home.info"/></a></small>

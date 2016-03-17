@@ -5,20 +5,19 @@
   background-image: none;
   padding: 0 15px 15px 0;
   margin: 0px 0 10px;
+
+  li, li a {
+    color: $taupe-darker;
+    background-color: inherit;
+    font-style: normal;
+    font-weight: normal;
+    text-shadow: none;
+  }
 }
 
-.breadcrumb li,
 .breadcrumb li a {
-  color: $taupe-dark;
-  background-color: inherit;
-  font-style: normal;
-  font-weight: normal;
-  text-shadow: none;
-}
+  box-shadow: inset 0 -1px 0px lighten($taupe-light, 5%);
 
-ol.breadcrumb li a {
-  // border-bottom: 1px solid lighten($taupe-light, 2%);
-  box-shadow: inset 0 -1px 0px lighten($taupe-light, 15%);
   &:hover {
     text-decoration: none;
     box-shadow: inset 0 -1px 0px lighten($taupe-dark, 1%);
@@ -27,7 +26,7 @@ ol.breadcrumb li a {
 
 .breadcrumb > li + li:before {
   padding: 0 5px;
-  color: lighten($taupe-light, 10%);
+  color: lighten($taupe-light, 1%);
   content: ">";
 }
 

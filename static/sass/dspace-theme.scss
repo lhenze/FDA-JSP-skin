@@ -1,32 +1,27 @@
-/* NYU theme LMH */
-
-/* Red #C50FC3  197 15 60
-Violet #57068C
-Taupe dark #A49483
-Taupe light B5ADA6   181, 173, 166
-link red #D11255   */
-
-/* from style guides */
+/* from NYU style guides */
 
 $violet: #57068C;
+$taupe-dark: #A49483;
+$taupe-light: #B5ADA6;
+$nyu-red: #D11255;
+$green: #799A05;
+$teal: #008996;
+
+/*  */
+/* variations */
 $violet_bright: #8300D7;
 $violet_bright2: darken($violet_bright, 7%);
 $violet-dark: darken($violet, 8%);
 $taupe-dark: #A49483;
-$taupe-light: #B5ADA6;
+$taupe-darker: #756756;
 
-/*  */
-$nyu-red: #D11255;
+$taupe-light: #B5ADA6;
 $nyu-red-light: tint($nyu-red, 20%);
 $taupe-header: darken($taupe-dark, 15%);
 $text-color2: darken($taupe-dark, 25%);
 $text-color: darken($taupe-dark, 31%);
 $taupe-super-light: #F6F5F4;
-
-$green: #799A05;
 $green_light: tint($green, 10%);
-
-$teal: #008996;
 $tertiary: $teal;
 $tertiary-light: tint($tertiary, 10%);
 
@@ -51,6 +46,12 @@ html {
   font-size: 100%;
 }
 
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  //font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  // font-weight: normal;
+  line-height: 1.25;
+}
+
 #content {
   padding-bottom: 60px;
   margin-top: 20px;
@@ -64,6 +65,7 @@ a:visited {
 .brand {
   font-size: 1rem;
   max-width: 44em;
+
   h4 {
     color: $taupe-dark;
   }
@@ -74,9 +76,17 @@ h2, .h2 {
   font-weight: 300;
 }
 
-.collections-list {
+.readmore {
+  white-space: nowrap;
+}
+
+.info-page {
+  padding-bottom: 5rem;
+
   h3 {
-    color: $text-color;
-    margin: 10px 0;
+    font-size: 1.25rem;
+    font-weight: normal;
+    margin-bottom: 0.4rem;
+    margin-top: 2rem;
   }
 }

@@ -33,14 +33,29 @@ body .search-area {
   padding-bottom: 3px;
   width: auto;
   overflow: auto;
+
   h2 {
     font-size: 2rem;
     margin-bottom: 5px;
     padding-bottom: 0;
-    font-weight: normal;
+
+    // font-weight: normal;
+ 
   }
+
   .img-hold {
     float: left;
     margin-right: 20px;
+  }
+}
+
+.info-page {
+  padding-bottom: 5rem;
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: normal;
+    margin-bottom: 0.4rem;
+    margin-top: 2rem;
   }
 }
