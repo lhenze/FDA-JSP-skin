@@ -70,37 +70,48 @@
     MostDownloaded mostdownloaded = ( MostDownloaded) request.getAttribute("most.downloaded");
 %>
 <%!
-    void showCommunity(Community c, JspWriter out, HttpServletRequest request, ItemCounter ic, Map collectionMap, Map subcommunityMap) throws ItemCountException, IOException, SQLException
+ void showCommunity(Community c, JspWriter out, HttpServletRequest request, ItemCounter ic, Map collectionMap, Map subcommunityMap) throws ItemCountException, IOException, SQLException
     {
         out.println( "<li>" );
-        out.println( "<h4><a href=\"" + request.getContextPath() + "/handle/" 
-        	+ c.getHandle() + "\">" + c.getMetadata("name") + "</a></h4>");
+        out.println( "<h4><a href=\"" + request.getContextPath() + "/handle/"
+                + c.getHandle() + "\">" + c.getMetadata("name") + "</a></h4>");
+
+         // Get the sub-communities in this community
+        Community[] comms = (Community[]) subcommunityMap.get(c.getID());
+
         // Get the collections in this community
         Collection[] cols = (Collection[]) collectionMap.get(c.getID());
+
+        if ((comms != null && comms.length > 0) || (cols != null && cols.length > 0) )
+           {
+           out.println( "<ul style=\"display:none \">" );
+            }
+        if (comms != null && comms.length > 0)
+        {
+       
+            for (int k = 0; k < comms.length; k++)
+            {
+               showCommunity(comms[k], out, request, ic, collectionMap, subcommunityMap);
+            }
+     
+        }
+
         if (cols != null && cols.length > 0)
         {
-        out.println( "<ul>" );
+ 
             for (int j = 0; j < cols.length; j++)
             {
                 out.println("<li>");
                 out.println("<h4><a href=\"" + request.getContextPath() + "/handle/" + cols[j].getHandle() + "\">" + cols[j].getMetadata("name") +"</a></h4>");
                 out.println("</li>");
             }
-        out.println( "</ul>" );
+      
         }
-        // Get the sub-communities in this community
-        Community[] comms = (Community[]) subcommunityMap.get(c.getID());
-        if (comms != null && comms.length > 0)
-        {
-        out.println( "<ul>" );
-            for (int k = 0; k < comms.length; k++)
-            {
-               showCommunity(comms[k], out, request, ic, collectionMap, subcommunityMap);
-            }
-        out.println( "</ul>" );
+       if ((comms != null && comms.length > 0) || (cols != null && cols.length > 0) ) {
+             out.println( "</ul>" );
         }
         out.println("</li>");
-    }
+}
 %>
 <dspace:layout locbar="noLink" titlekey="jsp.home.title" feedData="<%= feedData %>">
 
