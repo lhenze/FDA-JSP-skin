@@ -69,9 +69,10 @@
 %>            
             
 					<div class="input-group">
-	
+				
           <dspace:selectcollection klass="form-control" id="tcollection" collection="-1" name="collection"/>
 					</div><br/><br/>
+
             <%-- Hidden fields needed for SubmissionController servlet to know which step is next--%>
             <%= SubmissionController.getSubmissionParameters(context, request) %>
 
