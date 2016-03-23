@@ -149,6 +149,17 @@
 		BrowseInfo bi = (BrowseInfo) request.getAttribute("browse.info");
 		BrowseIndex bix = bi.getBrowseIndex();
 
+
+		String bi_name_key = "browse.menu." + bi.getSortOption().getName();
+		String so_name_key = "browse.order." + (bi.isAscending() ? "asc" : "desc");
+
+		Integer rpp =  bi.getResultsPerPage();
+		Integer sortedByNum =  bi.getSortOption().getNumber();
+		String sortedBy = bi.getSortOption().getName();
+
+		String order = (bi.isAscending() ? "asc" : "desc");
+
+
 		// prepare the next and previous links
 		String linkBase = request.getContextPath() + "/handle/" + collection.getHandle();
 		
@@ -157,29 +168,18 @@
 		
 		if (bi.hasNextPage())
 		{
-			next = next + "?offset=" + bi.getNextOffset();
+			next = next + "?offset=" + bi.getNextOffset() + "&rpp=" + rpp + "&value=" + sortedByNum + "&data-order=" + order;
 		}
 		
 		if (bi.hasPrevPage())
 		{
-			prev = prev + "?offset=" + bi.getPrevOffset();
+			prev = prev + "?offset=" + bi.getPrevOffset() + "&rpp=" + rpp + "&value=" + sortedByNum + "&data-order=" + order;
 		}
 
-		String bi_name_key = "browse.menu." + bi.getSortOption().getName();
-		String so_name_key = "browse.order." + (bi.isAscending() ? "asc" : "desc");
-
-		Integer rpp =  bi.getResultsPerPage();
-		String sortedBy = bi.getSortOption().getName();
-
-		String order = (bi.isAscending() ? "asc" : "desc");
 		String titleAscSelected = ((sortedBy.equalsIgnoreCase("title") && (order.equalsIgnoreCase("asc"))) ? "selected=\"selected\"" : "");
 		String titleDescSelected = ((sortedBy.equalsIgnoreCase("title") && (order.equalsIgnoreCase("desc")))  ? "selected=\"selected\"" : "");
 		String dateIAscSelected = ((sortedBy.equalsIgnoreCase("dateissued") && (order.equalsIgnoreCase("asc"))) ? "selected=\"selected\"" : "");
 	   String dateIDescSelected = ((sortedBy.equalsIgnoreCase("dateissued") && (order.equalsIgnoreCase("desc")))  ? "selected=\"selected\"" : "");
-  // String ascSelected = (SortOption.ASCENDING.equalsIgnoreCase(order)   ? "selected=\"selected\"" : "");
-  //  String descSelected = (SortOption.DESCENDING.equalsIgnoreCase(order) ? "selected=\"selected\"" : "");
- // String ascSelected = (SortOption.ASCENDING.equalsIgnoreCase(order)   ? "selected=\"selected\"" : "");
-  //  String descSelected = (SortOption.DESCENDING.equalsIgnoreCase(order) ? "selected=\"selected\"" : "");
 
 
 %>
