@@ -14,3 +14,9 @@ form.edit_metadata {
 .panel .resumable-list {
     margin: 0;
 }
+
+.label-required:after {
+    color: $nyu-red;
+    content: " *";
+    font-size: 1.2em;
+}
