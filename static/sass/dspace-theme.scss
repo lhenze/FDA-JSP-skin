@@ -43,50 +43,50 @@ $tertiary-light: tint($tertiary, 10%);
 @import "partials/_admin";
 
 html {
-    font-size: 100%;
+  font-size: 100%;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    //font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    // font-weight: normal;
-    line-height: 1.25;
+  //font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  // font-weight: normal;
+  line-height: 1.25;
 }
 
 #content {
-    padding-bottom: 60px;
-    margin-top: 20px;
+  padding-bottom: 60px;
+  margin-top: 20px;
 }
 
 a:link,
 a:visited {
-    color: $teal;
+  color: $teal;
 }
 
 .brand {
-    font-size: 1rem;
-    max-width: 44em;
+  font-size: 1rem;
+  max-width: 44em;
 
-    h4 {
-        color: $taupe-dark;
-    }
+  h4 {
+    color: $taupe-dark;
+  }
 }
 
 h2, .h2, h1, .h1 {
-    font-weight: normal;
-    font-weight: 300;
+  font-weight: normal;
+  font-weight: 300;
 }
 
 .readmore {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .info-page {
-    padding-bottom: 5rem;
+  padding-bottom: 5rem;
 
-    h3 {
-        font-size: 1.25rem;
-        font-weight: normal;
-        margin-bottom: 0.4rem;
-        margin-top: 2rem;
-    }
+  h3 {
+    font-size: 1.25rem;
+    font-weight: normal;
+    margin-bottom: 0.4rem;
+    margin-top: 2rem;
+  }
 }
