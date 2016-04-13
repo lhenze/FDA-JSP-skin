@@ -51,11 +51,11 @@
     box-shadow: 0px 1px 0px 0px white;
 
     h1 {
-      color: #8A7D6E;
       color: $taupe-header;
       margin: 0;
-      font-size: 1rem;
+      font-size: .8rem;
       margin: 0.1rem 0;
+      font-weight: bold;
     }
 
     &:first-child {
