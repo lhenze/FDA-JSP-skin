@@ -15,7 +15,6 @@ $violet-dark: darken($violet, 8%);
 $taupe-dark: #A49483;
 $taupe-darker: #756756;
 
-$taupe-light: #B5ADA6;
 $nyu-red-light: tint($nyu-red, 20%);
 $taupe-header: darken($taupe-dark, 15%);
 $text-color2: darken($taupe-dark, 25%);
@@ -26,6 +25,13 @@ $tertiary: $teal;
 $tertiary-light: tint($tertiary, 10%);
 
 @import "compass/css3/images";
+
+@mixin breakword($anything) {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+}
 
 @import "partials/_pagelayout";
 @import "partials/_panels";
@@ -52,6 +58,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   line-height: 1.25;
 }
 
+a, a:active, a:focus {
+  outline: none;
+  outline: 0;
+}
+
 #content {
   padding-bottom: 60px;
   margin-top: 20px;
@@ -74,6 +85,14 @@ a:visited {
 h2, .h2, h1, .h1 {
   font-weight: normal;
   font-weight: 300;
+}
+
+code {
+  @include breakword(1);
+}
+
+.table td {
+  @include breakword(1);
 }
 
 .readmore {

@@ -36,17 +36,25 @@
   background-image: none;
   background-color: $violet;
   border-color: $violet;
+
   .navbar-nav > li > a,
   .navbar-bottom a {
     color: #ddd;
   }
+
   @media (max-width: 767px) {
+    .navbar-collapse.in {
+      overflow-y: hidden;
+    }
+
     .navbar-nav .open .dropdown-menu {
       margin-left: 4em;
+
       > li > a, .dropdown-header {
         padding: 5px;
         color: #ddd;
       }
+
       .divider {
         border-top: 1px solid $violet-dark;
         box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -59,32 +67,44 @@ header div.navbar-right {
   margin-top: 10px;
 }
 
-@media (min-width: 0em) and (max-width: 991px) {
+@media (max-width: 991px) {
   .container > .navbar-header, .container > .navbar-collapse {
     margin-right: 0px;
     margin-left: 0px;
   }
+
   .navbar-collapse {
     max-height: none;
   }
+
+  .navbar-brand {
+    /* to override some bootstrap */
+    padding: 15px 5px;
+  }
+
   .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
     background-color: $violet-dark;
     border-color: $violet-dark;
   }
+
   .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
     color: #fff;
     background-color: $violet-dark;
   }
+
   .navbar-header {
     background: transparent url("../../../image/nyu_fda_logo_concise.svg") no-repeat 0px center;
   }
+
   .navbar-header img {
     opacity: 0.0;
     width: 200px;
   }
+
   .navbar-toggle {
     margin-top: 15px;
   }
+
   header div.navbar-right {
     margin-left: 0;
   }
