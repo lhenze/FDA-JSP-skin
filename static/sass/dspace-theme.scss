@@ -76,7 +76,12 @@ a:visited {
 .brand {
   font-size: 1rem;
   max-width: 44em;
-
+  .page-title {
+     display: inline-block;
+     font-size: inherit;
+     font-weight:normal;
+     margin:0;
+   }
   h4 {
     color: $taupe-dark;
   }
