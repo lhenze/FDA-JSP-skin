@@ -72,7 +72,11 @@ a:link,
 a:visited {
   color: $teal;
 }
-
+a:focus {
+    outline: 0;
+    box-shadow: 0px 0px 0px 3px $teal;
+    z-index: 1000;
+}
 .brand {
   font-size: 1rem;
   max-width: 44em;
