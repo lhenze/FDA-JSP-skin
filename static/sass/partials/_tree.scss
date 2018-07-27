@@ -1,5 +1,4 @@
 .collections-list h3 {
-  //border-bottom: 1px solid lighten($taupe-light, 14%);
   color: $text-color;
   margin: 10px 0;
   color: #816B56;
@@ -9,28 +8,24 @@
 
 .fda-tree {
   max-width: 44rem;
-
   a {
     display: block;
     height: auto;
   }
 
-  h2 {
-    color: $taupe-header;
-    font-size: 1.3rem;
-  }
-
-  h4 {
+  .t1 {
     font-size: 1.2rem;
     margin: 0;
-
+    display:inline-block;
     a:link, a:visited {
       color: $text-color;
       padding: 7px 0;
+      font-weight: 500;
     }
   }
 
-  ul {
+
+   ul {
     list-style: none;
     padding-left: 0;
     margin: 0;
@@ -43,7 +38,6 @@
   ul > li > ul {
     margin-left: 30px;
 
-    // background-color: red;
     background-color: lighten($taupe-light, 29%);
     padding-top: 10px;
     padding-bottom: 10px;
@@ -57,15 +51,14 @@
       background-color: lighten($taupe-light, 25%);
     }
 
-    h4 {
+    .t1 {
       font-size: 1rem;
       font-weight: 400;
     }
   }
 
   a.arrow {
-    // display: block;
-    float: left;
+    display: inline-block;
     font-size: 1.3rem;
     font-weight: bold;
     padding-left: 0;
@@ -74,20 +67,12 @@
     width: 30px;
     color: shade($nyu-red, 5%);
 
-    // border: 1px solid transparent;
     &:hover, &:active, &:focus {
       text-decoration: none;
     }
 
     &:hover {
       color: tint($nyu-red, 15%);
-    }
-
-    &.isOpen {
-      //border: 1px solid red;
-      // box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-      //background-color: #FCF7F1;
-   
     }
   }
 }
