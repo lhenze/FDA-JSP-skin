@@ -304,7 +304,7 @@
 <% } %>
 
   	<div class="submit-contain">
-      			<button id="main-query-submit" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+      			<button id="main-query-submit" aria-label="submit" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
 						<input type="hidden" value="<%= rpp %>" name="rpp" />
 						<input type="hidden" value="<%= sortedBy %>" name="sort_by" />
 						<input type="hidden" value="<%= order %>" name="order" />
@@ -443,13 +443,13 @@ else if( qResults != null)
 	        qResults.getStart()+qResults.getMaxResults():qResults.getTotalSearchResults();
 %>
     <%-- <p>Results <//%=qResults.getStart()+1%>-<//%=qResults.getStart()+qResults.getHitHandles().size()%> of --%>
-	<h3 class="resultsnum"><fmt:message key="jsp.search.results.results">
+	<h1 class="resultsnum h3"><fmt:message key="jsp.search.results.results">
 
         <fmt:param><%=qResults.getStart()+1%></fmt:param> 
         <fmt:param><%=lastHint%></fmt:param>
         <fmt:param><%=qResults.getTotalSearchResults()%></fmt:param>
       <fmt:param><%=(float) qResults.getSearchTime() / 1000%></fmt:param>
-    </fmt:message></h3>
+    </fmt:message></h1>
 <!-- give a content to the div -->
 	
 
@@ -473,7 +473,7 @@ else if( qResults != null)
 				}
 	} %>	
 		
-           <select name="rpp" class="form-control" id="rpp_select">
+           <select name="rpp" class="form-control" id="rpp_select" aria-label="Results Per Page">
 <%
                for (int i = 5; i <= 100 ; i += 5)
                {
@@ -491,7 +491,7 @@ else if( qResults != null)
 %>
             <!--   <label for="sort_by">   sorted by <fmt:message key="search.results.sort-by"/></label> -->
          
-							<select name="sort_by" id="sort_by" class="form-control">
+							<select name="sort_by" id="sort_by" class="form-control" aria-label="Sorting">
 									<option value="score"><fmt:message key="search.sort-by.relevance"/></option>
 									<option data-order="ASC" value="dc.title_sort" <%= titleAscSelected %>>Title A-Z</option>
 									<option data-order="DESC" value="dc.title_sort" <%= titleDescSelected %>>Title Z-A</option>
