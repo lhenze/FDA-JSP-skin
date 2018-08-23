@@ -92,7 +92,7 @@ body .search-area {
 .panel h2, .panel-info h2 {
   font-size: 1.3rem;
   margin: 0.5em 0 0 0;
-  color: #756756;
+  color: #675949;
 }
 /* line 9, ../../sass/partials/_panels.scss */
 .panel > .panel-heading, .panel-info > .panel-heading {
@@ -101,7 +101,7 @@ body .search-area {
   border: 1px solid rgba(181, 173, 166, 0.2);
   text-transform: uppercase;
   font-size: .9rem;
-  color: #494036;
+  color: #3a3229;
   font-weight: 500;
   text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
 }
@@ -921,7 +921,7 @@ header div.navbar-right {
 }
 /* line 9, ../../sass/partials/_breadcrumbs.scss */
 .breadcrumb li, .breadcrumb li a {
-  color: #756756;
+  color: #675949;
   background-color: inherit;
   font-style: normal;
   font-weight: normal;
@@ -952,7 +952,7 @@ header div.navbar-right {
 
 /* line 1, ../../sass/partials/_mostdownloaded.scss */
 .badge {
-  background-color: #756756;
+  background-color: #675949;
   color: #ffffff;
   margin: 0;
   position: relative;
@@ -968,7 +968,7 @@ header div.navbar-right {
   text-transform: uppercase;
   font-size: .9rem;
   margin: 0;
-  color: #756756;
+  color: #675949;
 }
 /* line 20, ../../sass/partials/_mostdownloaded.scss */
 .most-downloaded div.authors {
@@ -1002,7 +1002,7 @@ header div.navbar-right {
 }
 /* line 54, ../../sass/partials/_mostdownloaded.scss */
 .most-downloaded article h1 {
-  color: #756756;
+  color: #675949;
   margin: 0;
   font-size: .8rem;
   margin: 0.1rem 0;
@@ -1216,7 +1216,7 @@ a.btn-primary:link, a.btn-primary:hover, a.btn-primary:focus, a.btn-primary:visi
 }
 /* line 4, ../../sass/partials/_facets.scss */
 .facets a:link, .facets a:visited {
-  color: #756756;
+  color: #675949;
   display: block;
 }
 /* line 8, ../../sass/partials/_facets.scss */
@@ -1245,7 +1245,7 @@ a.btn-primary:link, a.btn-primary:hover, a.btn-primary:focus, a.btn-primary:visi
 /* line 32, ../../sass/partials/_facets.scss */
 .facetName {
   display: block;
-  color: #756756;
+  color: #675949;
   text-transform: uppercase;
   font-size: .85rem;
   font-weight: 500;
@@ -1390,35 +1390,35 @@ form.edit_metadata {
   font-size: 1.2em;
 }
 
-/* line 50, ../../sass/dspace-theme.scss */
+/* line 49, ../../sass/dspace-theme.scss */
 html {
   font-size: 100%;
 }
 
-/* line 54, ../../sass/dspace-theme.scss */
+/* line 53, ../../sass/dspace-theme.scss */
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   line-height: 1.25;
 }
 
-/* line 60, ../../sass/dspace-theme.scss */
+/* line 59, ../../sass/dspace-theme.scss */
 a, a:active, a:focus {
   outline: none;
   outline: 0;
 }
 
-/* line 65, ../../sass/dspace-theme.scss */
+/* line 64, ../../sass/dspace-theme.scss */
 #content {
   padding-bottom: 60px;
   margin-top: 20px;
 }
 
-/* line 70, ../../sass/dspace-theme.scss */
+/* line 69, ../../sass/dspace-theme.scss */
 a:link,
 a:visited {
   color: #007c88;
 }
 
-/* line 74, ../../sass/dspace-theme.scss */
+/* line 73, ../../sass/dspace-theme.scss */
 a:focus {
   outline: 0;
   box-shadow: 0px 0px 0px 3px #007c88;
@@ -1426,30 +1426,30 @@ a:focus {
   position: relative;
 }
 
-/* line 80, ../../sass/dspace-theme.scss */
+/* line 79, ../../sass/dspace-theme.scss */
 .brand {
   font-size: 1rem;
   max-width: 44em;
 }
-/* line 83, ../../sass/dspace-theme.scss */
+/* line 82, ../../sass/dspace-theme.scss */
 .brand .page-title {
   display: inline-block;
   font-size: inherit;
   font-weight: normal;
   margin: 0;
 }
-/* line 89, ../../sass/dspace-theme.scss */
+/* line 88, ../../sass/dspace-theme.scss */
 .brand h4 {
   color: #A49483;
 }
 
-/* line 94, ../../sass/dspace-theme.scss */
+/* line 93, ../../sass/dspace-theme.scss */
 h2, .h2, h1, .h1 {
   font-weight: normal;
   font-weight: 300;
 }
 
-/* line 99, ../../sass/dspace-theme.scss */
+/* line 98, ../../sass/dspace-theme.scss */
 code {
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -1457,7 +1457,7 @@ code {
   word-break: break-word;
 }
 
-/* line 103, ../../sass/dspace-theme.scss */
+/* line 102, ../../sass/dspace-theme.scss */
 .table td {
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -1465,16 +1465,16 @@ code {
   word-break: break-word;
 }
 
-/* line 107, ../../sass/dspace-theme.scss */
+/* line 106, ../../sass/dspace-theme.scss */
 .readmore {
   white-space: nowrap;
 }
 
-/* line 111, ../../sass/dspace-theme.scss */
+/* line 110, ../../sass/dspace-theme.scss */
 .info-page {
   padding-bottom: 5rem;
 }
-/* line 114, ../../sass/dspace-theme.scss */
+/* line 113, ../../sass/dspace-theme.scss */
 .info-page h3 {
   font-size: 1.25rem;
   font-weight: normal;
