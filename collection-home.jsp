@@ -258,7 +258,7 @@
 
 <div class ="discovery-result-results">
 <%-- output the results using the browselist tag --%>
-   <dspace:browselist browseInfo="<%= bi %>" emphcolumn="<%= bi.getSortOption().getMetadata() %>" showThumbsCollection="<%=show_thumbnails %>" />
+   <dspace:browselist browseInfo="<%= bi %>" emphcolumn="<%= bi.getSortOption().getMetadata() %>"   />
   <%-- give us the bottom repaort on what we are looking at --%>
 </div>
 
