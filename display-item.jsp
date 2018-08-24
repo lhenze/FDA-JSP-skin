@@ -262,7 +262,7 @@
 <%
         }
 %>
-    <a class="statisticsLink  btn btn-primary" href="<%= request.getContextPath() %>/handle/<%= handle %>/statistics"><fmt:message key="jsp.display-item.display-statistics"/></a>
+    <a aria-label ="View statistics for this item" class="statisticsLink  btn btn-primary" href="<%= request.getContextPath() %>/handle/<%= handle %>/statistics"><fmt:message key="jsp.display-item.display-statistics"/></a>
 
     <%-- SFX Link --%>
 <%
