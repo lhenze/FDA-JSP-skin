@@ -120,7 +120,7 @@
         <img class="img-responsive" alt="Logo" src="<%= request.getContextPath() %>/retrieve/<%= logo.getID() %>" />
       </div>
     <%  } %>
-    <h2><%= name %></h2>
+    <h1 class="page-title"> <%= name %></h1>
   </header>
 
 <%
@@ -140,7 +140,7 @@
  
   <% if (collection.isPublic()||show_thumbnails)
     { %>
- <section class="search-area">
+ <section class="search-area" role="search">
   <form method="get" action="/jspui/handle/<%= collection.getHandle() %>/simple-search" class="simplest-search">
     <div class="form-group-flex">
     <div class="input-hold">
@@ -204,7 +204,7 @@
   <%-- give us the top report on what we are looking at --%>
   <fmt:message var="bi_name" key="<%= bi_name_key %>"/>
   <fmt:message var="so_name" key="<%= so_name_key %>"/>
-  <h3 class="browse_range resultsnum">
+  <h2 class="browse_range resultsnum section-title">
     <fmt:message key="jsp.collection-home.content.range">
       <fmt:param value="${bi_name}"/>
       <fmt:param value="${so_name}"/>
@@ -212,11 +212,11 @@
       <fmt:param value="<%= Integer.toString(bi.getFinish()) %>"/>
       <fmt:param value="<%= Integer.toString(bi.getTotal()) %>"/>
     </fmt:message>
-  </h3>
+  </h2>
 
  <div class="discovery-pagination-controls">
   <form action="" method="get" id="results-sorting">
-    <select name="rpp" class="form-control" id="rpp_select">
+    <select name="rpp" class="form-control" id="rpp_select" aria-label="Number of Results Per Page">
 <%
          for (int i = 5; i <= 100 ; i += 5)
          {
@@ -229,7 +229,7 @@
        </select> 
 
 
-    <select id="sort_by" name="value" class="form-control">
+    <select id="sort_by" name="value" class="form-control" aria-label="Sorting Criteria">
     <option data-order="asc" value="1" <%= titleAscSelected %>>Title A-Z</option>
     <option data-order="desc" value="1" <%= titleDescSelected %>>Title Z-A</option>
     <option data-order="desc" value="2" <%= dateIDescSelected %>>Newest</option>
@@ -304,7 +304,7 @@
    <%if (mostdownloaded != null && mostdownloaded.count() > 0) { %>
 
   <div class="panel panel-primary most-downloaded">
-               <div class="panel-heading"><h1>Most downloaded</h1></div>
+               <div class="panel-heading"><h2 class="panel-title">Most downloaded</h2></div>
                <div class="panel-body">
 
               <%
@@ -327,7 +327,7 @@
               <article >
               <div class="communityflag"><span>Collection:</span>
                 <a href="<%= request.getContextPath() %>/handle/<%=col.getHandle() %>" ><%= col.getName()  %></a></div>
-                <h1><a href="<%= request.getContextPath() %>/handle/<%=item.getHandle() %>"><%= displayTitle %></a></h1>
+                <h3 class="article-title"><a href="<%= request.getContextPath() %>/handle/<%=item.getHandle() %>"><%= displayTitle %></a></h3>
                 <% if (dcv!=null&&dcv.length>0)
                   {
                    for(int i=0;i<authors.length;i++)
