@@ -5,6 +5,7 @@ $taupe-light: #B5ADA6;
 $nyu-red: #D11255;
 $green: #799A05;
 $teal: #007c88;
+
 //
 // variations
 $violet_bright: #8300D7;
@@ -52,8 +53,6 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  //font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  // font-weight: normal;
   line-height: 1.25;
 }
 
@@ -71,21 +70,25 @@ a:link,
 a:visited {
   color: $teal;
 }
+
 a:focus {
-    outline: 0;
-    box-shadow: 0px 0px 0px 3px $teal;
-    z-index: 1000;
-    position:relative;
+  outline: 0;
+  box-shadow: 0px 0px 0px 3px $teal;
+  z-index: 1000;
+  position: relative;
 }
+
 .brand {
   font-size: 1rem;
   max-width: 44em;
+
   .page-title {
-     display: inline-block;
-     font-size: inherit;
-     font-weight:normal;
-     margin:0;
-   }
+    display: inline-block;
+    font-size: inherit;
+    font-weight: normal;
+    margin: 0;
+  }
+
   h4 {
     color: $taupe-dark;
   }
