@@ -45,6 +45,7 @@ $tertiary-light: tint($tertiary, 10%);
 @import "partials/_facets";
 @import "partials/_itempage";
 @import "partials/_admin";
+@import "partials/_skiplink";
 
 html {
   font-size: 100%;
