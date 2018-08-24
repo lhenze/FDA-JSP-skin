@@ -154,7 +154,8 @@ if (mostdownloaded != null && mostdownloaded.count() > 0)
 %>
        <section class="col-md-4 sidebar">
                      <div class="panel panel-primary most-downloaded">
-                       <div class="panel-heading"><h2 class="panel-title">Most downloaded</h2></div>
+                       <div class="panel-heading">
+                        <h2 class="panel-title">Most downloaded</h2></div>
                        <div class="panel-body">
 
                     <%
