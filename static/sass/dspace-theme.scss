@@ -20,8 +20,8 @@ $text-color2: darken($taupe-dark, 25%);
 $text-color: darken($taupe-dark, 31%);
 $taupe-super-light: #F6F5F4;
 $green_light: tint($green, 10%);
-$tertiary: $teal;
-$tertiary-light: tint($tertiary, 10%);
+$tertiary: darken($teal, 8%);
+$tertiary-light: tint($tertiary, 15%);
 
 @import "compass/css3/images";
 
