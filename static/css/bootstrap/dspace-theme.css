@@ -1442,28 +1442,33 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 /* line 60, ../../sass/dspace-theme.scss */
+h1, .h1 {
+  font-size: 30px;
+}
+
+/* line 64, ../../sass/dspace-theme.scss */
 a, a:active, a:focus {
   outline: none;
   outline: 0;
 }
 
-/* line 65, ../../sass/dspace-theme.scss */
+/* line 69, ../../sass/dspace-theme.scss */
 #content {
   padding-bottom: 60px;
   margin-top: 20px;
 }
-/* line 69, ../../sass/dspace-theme.scss */
+/* line 73, ../../sass/dspace-theme.scss */
 #content:focus {
   outline: none;
 }
 
-/* line 74, ../../sass/dspace-theme.scss */
+/* line 78, ../../sass/dspace-theme.scss */
 a:link,
 a:visited {
   color: #007c88;
 }
 
-/* line 79, ../../sass/dspace-theme.scss */
+/* line 83, ../../sass/dspace-theme.scss */
 a:focus {
   outline: 0;
   box-shadow: 0px 0px 0px 3px #007c88;
@@ -1471,30 +1476,30 @@ a:focus {
   position: relative;
 }
 
-/* line 86, ../../sass/dspace-theme.scss */
+/* line 90, ../../sass/dspace-theme.scss */
 .brand {
   font-size: 1rem;
   max-width: 44em;
 }
-/* line 90, ../../sass/dspace-theme.scss */
+/* line 94, ../../sass/dspace-theme.scss */
 .brand .page-title {
   display: inline-block;
   font-size: inherit;
   font-weight: normal;
   margin: 0;
 }
-/* line 97, ../../sass/dspace-theme.scss */
+/* line 101, ../../sass/dspace-theme.scss */
 .brand h4 {
   color: #A49483;
 }
 
-/* line 102, ../../sass/dspace-theme.scss */
+/* line 106, ../../sass/dspace-theme.scss */
 h2, .h2, h1, .h1 {
   font-weight: normal;
   font-weight: 300;
 }
 
-/* line 107, ../../sass/dspace-theme.scss */
+/* line 111, ../../sass/dspace-theme.scss */
 code {
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -1502,28 +1507,28 @@ code {
   word-break: break-word;
 }
 
-/* line 111, ../../sass/dspace-theme.scss */
+/* line 115, ../../sass/dspace-theme.scss */
 .table td {
   overflow-wrap: break-word;
   word-wrap: break-word;
   -ms-word-break: break-all;
   word-break: break-word;
 }
-/* line 114, ../../sass/dspace-theme.scss */
+/* line 118, ../../sass/dspace-theme.scss */
 .table td a {
   font-weight: bold;
 }
 
-/* line 119, ../../sass/dspace-theme.scss */
+/* line 123, ../../sass/dspace-theme.scss */
 .readmore {
   white-space: nowrap;
 }
 
-/* line 123, ../../sass/dspace-theme.scss */
+/* line 127, ../../sass/dspace-theme.scss */
 .info-page {
   padding-bottom: 5rem;
 }
-/* line 126, ../../sass/dspace-theme.scss */
+/* line 130, ../../sass/dspace-theme.scss */
 .info-page h3 {
   font-size: 1.25rem;
   font-weight: normal;

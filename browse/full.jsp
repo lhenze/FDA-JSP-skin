@@ -186,7 +186,7 @@
 
 	<%-- Build the header (careful use of spacing) --%>
 	<header class="browseheader">
-	<h2><fmt:message key="browse.full.header"><fmt:param value="<%= scope %>"/></fmt:message> <fmt:message key="<%= typeKey %>"/> <%= value %></h2>
+	<h1><fmt:message key="browse.full.header"><fmt:param value="<%= scope %>"/></fmt:message> <fmt:message key="<%= typeKey %>"/> <%= value %></h1>
 
 	<%-- Include the main navigation for all the browse pages --%>
 	<%-- This first part is where we render the standard bits required by both possibly navigations --%>
