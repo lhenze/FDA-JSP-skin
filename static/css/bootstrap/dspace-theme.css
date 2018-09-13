@@ -1477,29 +1477,34 @@ a:focus {
 }
 
 /* line 90, ../../sass/dspace-theme.scss */
+.alert-warning {
+  color: #846530;
+}
+
+/* line 94, ../../sass/dspace-theme.scss */
 .brand {
   font-size: 1rem;
   max-width: 44em;
 }
-/* line 94, ../../sass/dspace-theme.scss */
+/* line 98, ../../sass/dspace-theme.scss */
 .brand .page-title {
   display: inline-block;
   font-size: inherit;
   font-weight: normal;
   margin: 0;
 }
-/* line 101, ../../sass/dspace-theme.scss */
+/* line 105, ../../sass/dspace-theme.scss */
 .brand h4 {
   color: #A49483;
 }
 
-/* line 106, ../../sass/dspace-theme.scss */
+/* line 110, ../../sass/dspace-theme.scss */
 h2, .h2, h1, .h1 {
   font-weight: normal;
   font-weight: 300;
 }
 
-/* line 111, ../../sass/dspace-theme.scss */
+/* line 115, ../../sass/dspace-theme.scss */
 code {
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -1507,28 +1512,28 @@ code {
   word-break: break-word;
 }
 
-/* line 115, ../../sass/dspace-theme.scss */
+/* line 119, ../../sass/dspace-theme.scss */
 .table td {
   overflow-wrap: break-word;
   word-wrap: break-word;
   -ms-word-break: break-all;
   word-break: break-word;
 }
-/* line 118, ../../sass/dspace-theme.scss */
+/* line 122, ../../sass/dspace-theme.scss */
 .table td a {
   font-weight: bold;
 }
 
-/* line 123, ../../sass/dspace-theme.scss */
+/* line 127, ../../sass/dspace-theme.scss */
 .readmore {
   white-space: nowrap;
 }
 
-/* line 127, ../../sass/dspace-theme.scss */
+/* line 131, ../../sass/dspace-theme.scss */
 .info-page {
   padding-bottom: 5rem;
 }
-/* line 130, ../../sass/dspace-theme.scss */
+/* line 134, ../../sass/dspace-theme.scss */
 .info-page h3 {
   font-size: 1.25rem;
   font-weight: normal;
