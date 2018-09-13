@@ -244,7 +244,7 @@
 
 	%>
 
-		<select name="sort_by" id="sort_by" class="form-control">
+		<select name="sort_by" id="sort_by" class="form-control" aria-label="Sort">
  				<option value="1" data-order="ASC"  <%= titleAscSelected %>>Sorting by Title A-Z</option>
  				<option value="1" data-order="DESC" <%= titleDescSelected %>>Sorting by Title Z-A</option>
  				<option value="2" data-order="DESC" <%= dateIDescSelected %>>Issue date newest</option>
@@ -258,7 +258,7 @@
 	}
 %>
 	
-	<select name="rpp" id="rpp_select" class="form-control">
+	<select name="rpp" id="rpp_select" class="form-control" aria-label="Results Per Page">
 <%
 	for (int i = 5; i <= 100 ; i += 5)
 	{

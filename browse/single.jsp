@@ -158,14 +158,14 @@
 		}
 --%>
 	<%--	<label for="order"><fmt:message key="browse.single.order"/></label>--%>
-		<select name="order" id="order_sort" class="form-control">
+		<select name="order" id="order_sort" class="form-control" aria-label="Sort">
 		<%--		<fmt:message key="browse.order.asc" />--%>
 			<option value="ASC" <%= ascSelected %>>Sorting A-Z</option>
 			<option value="DESC" <%= descSelected %>>Sorting Z-A</option>
 		</select>
 		
 		<%--	<label for="rpp"><fmt:message key="browse.single.rpp"/></label>--%>
-		<select name="rpp" class="form-control" id="rpp_select">
+		<select name="rpp" class="form-control" id="rpp_select"  aria-label="Results Per Page">
 <%
 	for (int i = 10; i <= 100 ; i += 10)
 	{

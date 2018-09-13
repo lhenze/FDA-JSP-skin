@@ -144,10 +144,10 @@
   <form method="get" action="/jspui/handle/<%= collection.getHandle() %>/simple-search" class="simplest-search">
     <div class="form-group-flex">
     <div class="input-hold">
-      <input type="text" class="form-control" placeholder="Search titles, authors, keywords..." name="query" id="tequery">
+      <input aria-label="search"  type="text" class="form-control" placeholder="Search titles, authors, keywords..." name="query" id="tequery">
     </div>
     <div class="button-hold">
-      <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+      <button  aria-label="submit" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
     </div>
     </div>
   </form>
