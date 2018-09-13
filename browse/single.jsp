@@ -121,9 +121,9 @@
 
 	<%-- Build the header (careful use of spacing) --%>
 	<header class="browseheader">
-	<h2>
+	<h1>
 		<fmt:message key="browse.single.header"><fmt:param value="<%= scope %>"/></fmt:message> <fmt:message key="<%= typeKey %>"/>
-	</h2>
+	</h1>
 	</header>
 <%
 	if (!bix.isTagCloudEnabled())
