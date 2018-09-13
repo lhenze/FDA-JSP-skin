@@ -110,6 +110,10 @@ code {
 
 .table td {
   @include breakword(1);
+
+  a {
+    font-weight: bold;
+  }
 }
 
 .readmore {
