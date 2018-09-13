@@ -1,7 +1,7 @@
 .btn-default {
   background-color: #eee;
 
-  @include background-image(linear-gradient($taupe-super-light, tint($taupe-light, 60%)));
+  @include background-image(linear-gradient(tint($taupe-super-light, 5%), tint($taupe-light, 90%)));
 
   background-repeat: repeat-x;
   border-color: tint($taupe-light, 50%);
@@ -9,10 +9,11 @@
   &:hover, &:focus {
     background-color: #ebebeb;
 
-    @include background-image(linear-gradient(tint($taupe-light, 60%), $taupe-super-light));
+    @include background-image(linear-gradient(tint($taupe-light, 90%), $taupe-super-light));
 
     background-repeat: repeat-x;
-    border-color: tint($taupe-light, 30%);
+    border-color: $taupe-light;
+    color: $teal;
   }
 }
 
